@@ -1,0 +1,54 @@
+<section class="lore-forge-step" data-step="abilities">
+  <h2>{{localize "LORE_FORGE.Character.Steps.Abilities"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Character.Abilities.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Combat Style --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Abilities.CombatStyle"}}</label>
+      <div class="inspiration-row">
+        <textarea name="combatStyle" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Abilities.CombatStylePlaceholder'}}">{{data.combatStyle}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="combatStyles">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Magical Abilities --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Abilities.MagicalAbilities"}}</label>
+      <div class="inspiration-row">
+        <textarea name="magicalAbilities" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Abilities.MagicalAbilitiesPlaceholder'}}">{{data.magicalAbilities}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="magicalAbilities">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Notable Skills --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Abilities.NotableSkills"}}</label>
+      <div class="inspiration-row">
+        <textarea name="notableSkills" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Abilities.NotableSkillsPlaceholder'}}">{{data.notableSkills}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="notableSkills">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Weaknesses --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Abilities.Weaknesses"}}</label>
+      <div class="inspiration-row">
+        <textarea name="weaknesses" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Abilities.WeaknessesPlaceholder'}}">{{data.weaknesses}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="weaknesses">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

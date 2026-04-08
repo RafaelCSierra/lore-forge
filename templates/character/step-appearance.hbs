@@ -1,0 +1,78 @@
+<section class="lore-forge-step" data-step="appearance">
+  <h2>{{localize "LORE_FORGE.Character.Steps.Appearance"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Character.Appearance.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Physical Description --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Appearance.PhysicalDesc"}}</label>
+      <div class="inspiration-row">
+        <textarea name="physicalDesc" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Character.Appearance.PhysicalDescPlaceholder'}}">{{data.physicalDesc}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="physicalDescs">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Height --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Appearance.Height"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="height" value="{{data.height}}"
+               placeholder="{{localize 'LORE_FORGE.Character.Appearance.HeightPlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="heights">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Build --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Appearance.Build"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="build" value="{{data.build}}"
+               placeholder="{{localize 'LORE_FORGE.Character.Appearance.BuildPlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="builds">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Hair & Eyes --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Appearance.HairAndEyes"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="hairAndEyes" value="{{data.hairAndEyes}}"
+               placeholder="{{localize 'LORE_FORGE.Character.Appearance.HairAndEyesPlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="hairAndEyes">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Distinguishing Marks --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Appearance.DistinguishingMarks"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="distinguishingMarks" value="{{data.distinguishingMarks}}"
+               placeholder="{{localize 'LORE_FORGE.Character.Appearance.DistinguishingMarksPlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="distinguishingMarks">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Clothing Style --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Appearance.ClothingStyle"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="clothingStyle" value="{{data.clothingStyle}}"
+               placeholder="{{localize 'LORE_FORGE.Character.Appearance.ClothingStylePlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="clothingStyles">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

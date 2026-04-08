@@ -1,0 +1,82 @@
+<section class="lore-forge-step" data-step="identity">
+  <h2>{{localize "LORE_FORGE.Location.Steps.Identity"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Location.Identity.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Location Name --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Identity.Name"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="name" value="{{data.name}}"
+               placeholder="{{localize 'LORE_FORGE.Location.Identity.NamePlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="names">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Location Type --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Identity.Type"}}</label>
+      <select name="locationType">
+        {{#each locationTypes}}
+        <option value="{{this.value}}" {{#if (eq ../data.locationType this.value)}}selected{{/if}}>
+          {{localize this.label}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+
+    {{!-- Region --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Common.Region"}}</label>
+      <select name="regionId" data-cascade="settlementId">
+        <option value="">{{localize "LORE_FORGE.Common.RegionNone"}}</option>
+        {{#each regions}}
+        <option value="{{this.id}}" {{#if (eq ../data.regionId this.id)}}selected{{/if}}>
+          {{this.name}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+
+    {{!-- Settlement (filtered by region) --}}
+    {{#if settlements.length}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Common.Settlement"}}</label>
+      <select name="settlementId">
+        <option value="">{{localize "LORE_FORGE.Common.SettlementNone"}}</option>
+        {{#each settlements}}
+        <option value="{{this.id}}" {{#if (eq ../data.settlementId this.id)}}selected{{/if}}>
+          {{this.name}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+    {{/if}}
+
+    {{!-- Owner Name --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Identity.OwnerName"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="ownerName" value="{{data.ownerName}}"
+               placeholder="{{localize 'LORE_FORGE.Location.Identity.OwnerNamePlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="ownerNames">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Owner Description --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Identity.OwnerDesc"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="ownerDesc" value="{{data.ownerDesc}}"
+               placeholder="{{localize 'LORE_FORGE.Location.Identity.OwnerDescPlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="ownerDescs">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

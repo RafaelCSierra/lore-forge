@@ -1,0 +1,122 @@
+<section class="lore-forge-step" data-step="identity">
+  <h2>{{localize "LORE_FORGE.Character.Steps.Identity"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Character.Identity.Desc"}}</p>
+
+  {{!-- Culture Grid --}}
+  <fieldset>
+    <legend>{{localize "LORE_FORGE.Character.Identity.Culture"}}</legend>
+    <div class="lf-grid-4">
+      {{#each cultures}}
+      <button type="button"
+              class="lf-card {{#if (eq ../selectedCulture this.key)}}selected{{/if}}"
+              data-action="select-culture"
+              data-culture="{{this.key}}">
+        <span class="lf-card-icon">{{this.icon}}</span>
+        <span class="lf-card-label">{{localize this.label}}</span>
+      </button>
+      {{/each}}
+    </div>
+  </fieldset>
+
+  {{!-- Sub-Culture Panel --}}
+  {{#if needsSubCulture}}
+  <div class="lf-subculture-panel">
+    <legend>{{localize "LORE_FORGE.Character.Identity.SubCulture"}}</legend>
+    <div class="lf-grid-subcult">
+      {{#each subCultures}}
+      <button type="button"
+              class="lf-card-sub {{#if (eq ../selectedSubCulture this.key)}}selected{{/if}}"
+              data-action="select-subculture"
+              data-subculture="{{this.key}}">
+        <span class="lf-card-sub-icon">{{this.icon}}</span>
+        <span class="lf-card-sub-label">{{localize this.label}}</span>
+      </button>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+
+  {{!-- Gender Selection --}}
+  <fieldset>
+    <legend>{{localize "LORE_FORGE.Character.Identity.Gender"}}</legend>
+    <div class="lf-gender-options">
+      <label>
+        <input type="radio" name="gender" value="male"
+               {{#if (eq selectedGender "male")}}checked{{/if}}>
+        {{localize "LORE_FORGE.Character.Gender.Male"}}
+      </label>
+      <label>
+        <input type="radio" name="gender" value="female"
+               {{#if (eq selectedGender "female")}}checked{{/if}}>
+        {{localize "LORE_FORGE.Character.Gender.Female"}}
+      </label>
+      <label>
+        <input type="radio" name="gender" value="any"
+               {{#if (eq selectedGender "any")}}checked{{/if}}>
+        {{localize "LORE_FORGE.Character.Gender.Any"}}
+      </label>
+    </div>
+  </fieldset>
+
+  {{!-- Name Suggestions --}}
+  <fieldset>
+    <legend>{{localize "LORE_FORGE.Character.Identity.Name"}}</legend>
+    <div class="lf-name-suggestions">
+      {{#each nameSuggestions}}
+      <button type="button"
+              class="lf-name-chip {{#if (eq ../selectedName this)}}selected{{/if}}"
+              data-action="select-name"
+              data-name="{{this}}">
+        {{this}}
+      </button>
+      {{/each}}
+      <button type="button" class="lf-name-chip randomize-btn" data-action="randomize-names">
+        &#x1f3b2; {{localize "LORE_FORGE.Character.Identity.Randomize"}}
+      </button>
+    </div>
+    <div class="lf-name-custom">
+      <label for="lf-char-name-input">{{localize "LORE_FORGE.Character.Identity.CustomName"}}</label>
+      <input type="text" id="lf-char-name-input" name="charName"
+             value="{{selectedName}}" placeholder="{{localize 'LORE_FORGE.Character.Identity.NamePlaceholder'}}">
+    </div>
+  </fieldset>
+
+  {{!-- Surname Suggestions --}}
+  <fieldset>
+    <legend>{{localize "LORE_FORGE.Character.Identity.Surname"}}</legend>
+    <div class="lf-name-suggestions">
+      {{#each surnameSuggestions}}
+      <button type="button"
+              class="lf-name-chip {{#if (eq ../selectedSurname this)}}selected{{/if}}"
+              data-action="select-surname"
+              data-surname="{{this}}">
+        {{this}}
+      </button>
+      {{/each}}
+      <button type="button" class="lf-name-chip randomize-btn" data-action="randomize-surnames">
+        &#x1f3b2; {{localize "LORE_FORGE.Character.Identity.Randomize"}}
+      </button>
+    </div>
+    <div class="lf-name-custom">
+      <label for="lf-char-surname-input">{{localize "LORE_FORGE.Character.Identity.Surname"}}:</label>
+      <input type="text" id="lf-char-surname-input" name="charSurname"
+             value="{{selectedSurname}}" placeholder="{{localize 'LORE_FORGE.Character.Identity.SurnamePlaceholder'}}">
+    </div>
+  </fieldset>
+
+  {{!-- Narrative Role Grid --}}
+  <fieldset>
+    <legend>{{localize "LORE_FORGE.Character.Identity.NarrativeRole"}}</legend>
+    <div class="lf-grid-5">
+      {{#each narrativeRoles}}
+      <button type="button"
+              class="lf-card {{#if (eq ../selectedNarrativeRole this.key)}}selected{{/if}}"
+              data-action="select-narrative-role"
+              data-role="{{this.key}}">
+        <span class="lf-card-icon">{{this.icon}}</span>
+        <span class="lf-card-label">{{localize this.label}}</span>
+      </button>
+      {{/each}}
+    </div>
+  </fieldset>
+</section>

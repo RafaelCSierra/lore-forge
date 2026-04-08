@@ -1,0 +1,42 @@
+<section class="lore-forge-step" data-step="history">
+  <h2>{{localize "LORE_FORGE.Location.Steps.History"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Location.History.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Origin --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.History.Origin"}}</label>
+      <div class="inspiration-row">
+        <textarea name="origin" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Location.History.OriginPlaceholder'}}">{{data.origin}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="origins">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Past Events --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.History.PastEvents"}}</label>
+      <div class="inspiration-row">
+        <textarea name="pastEvents" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Location.History.PastEventsPlaceholder'}}">{{data.pastEvents}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="pastEvents">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Legends --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.History.Legends"}}</label>
+      <div class="inspiration-row">
+        <textarea name="locationLegends" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Location.History.LegendsPlaceholder'}}">{{data.locationLegends}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="locationLegends">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

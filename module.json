@@ -1,0 +1,44 @@
+{
+  "id": "lore-forge",
+  "title": "Lore Forge",
+  "description": "Guided wizards for writing campaign lore — kingdoms, regions, and narrative characters — with random inspiration and formatted Journal Entries.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "Rafael"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "4.0"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/lore-forge.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Portugues (Brasil)",
+      "path": "lang/pt-br.json"
+    }
+  ]
+}

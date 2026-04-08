@@ -1,0 +1,117 @@
+<section class="lore-forge-step" data-step="factions">
+  <h2>{{localize "LORE_FORGE.Kingdom.Steps.Factions"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Kingdom.Factions.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Faction 1 --}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Kingdom.Factions.FactionLabel"}} 1</h4>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Kingdom.Factions.FactionName"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="faction1Name" value="{{data.faction1Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Kingdom.Factions.FactionNamePlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="factionNames">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Kingdom.Factions.FactionGoals"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="faction1Goals" value="{{data.faction1Goals}}"
+                 placeholder="{{localize 'LORE_FORGE.Kingdom.Factions.FactionGoalsPlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="factionGoals">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Faction 2 --}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Kingdom.Factions.FactionLabel"}} 2</h4>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Kingdom.Factions.FactionName"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="faction2Name" value="{{data.faction2Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Kingdom.Factions.FactionNamePlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="factionNames">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Kingdom.Factions.FactionGoals"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="faction2Goals" value="{{data.faction2Goals}}"
+                 placeholder="{{localize 'LORE_FORGE.Kingdom.Factions.FactionGoalsPlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="factionGoals">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Faction 3 --}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Kingdom.Factions.FactionLabel"}} 3</h4>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Kingdom.Factions.FactionName"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="faction3Name" value="{{data.faction3Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Kingdom.Factions.FactionNamePlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="factionNames">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Kingdom.Factions.FactionGoals"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="faction3Goals" value="{{data.faction3Goals}}"
+                 placeholder="{{localize 'LORE_FORGE.Kingdom.Factions.FactionGoalsPlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="factionGoals">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Internal Conflicts --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Factions.InternalConflicts"}}</label>
+      <div class="inspiration-row">
+        <textarea name="internalConflicts" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.Factions.InternalConflictsPlaceholder'}}">{{data.internalConflicts}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="conflicts">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- External Conflicts --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Factions.ExternalConflicts"}}</label>
+      <div class="inspiration-row">
+        <textarea name="externalConflicts" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.Factions.ExternalConflictsPlaceholder'}}">{{data.externalConflicts}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="conflicts">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Alliances --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Factions.Alliances"}}</label>
+      <div class="inspiration-row">
+        <textarea name="alliances" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.Factions.AlliancesPlaceholder'}}">{{data.alliances}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="alliances">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

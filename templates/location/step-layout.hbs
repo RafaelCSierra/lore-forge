@@ -1,0 +1,93 @@
+<section class="lore-forge-step" data-step="layout">
+  <h2>{{localize "LORE_FORGE.Location.Steps.Layout"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Location.Layout.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Spatial Description --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Layout.SpatialDesc"}}</label>
+      <div class="inspiration-row">
+        <textarea name="spatialDesc" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Location.Layout.SpatialDescPlaceholder'}}">{{data.spatialDesc}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="spatialDescs">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Room 1 --}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Location.Layout.RoomLabel"}} 1</h4>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Location.Layout.RoomName"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="room1Name" value="{{data.room1Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Location.Layout.RoomNamePlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="roomNames">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Location.Layout.RoomDesc"}}</label>
+        <div class="inspiration-row">
+          <textarea name="room1Desc" rows="2"
+                    placeholder="{{localize 'LORE_FORGE.Location.Layout.RoomDescPlaceholder'}}">{{data.room1Desc}}</textarea>
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="roomDescs">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Room 2 --}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Location.Layout.RoomLabel"}} 2</h4>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Location.Layout.RoomName"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="room2Name" value="{{data.room2Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Location.Layout.RoomNamePlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="roomNames">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Location.Layout.RoomDesc"}}</label>
+        <div class="inspiration-row">
+          <textarea name="room2Desc" rows="2"
+                    placeholder="{{localize 'LORE_FORGE.Location.Layout.RoomDescPlaceholder'}}">{{data.room2Desc}}</textarea>
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="roomDescs">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Room 3 --}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Location.Layout.RoomLabel"}} 3</h4>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Location.Layout.RoomName"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="room3Name" value="{{data.room3Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Location.Layout.RoomNamePlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="roomNames">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Location.Layout.RoomDesc"}}</label>
+        <div class="inspiration-row">
+          <textarea name="room3Desc" rows="2"
+                    placeholder="{{localize 'LORE_FORGE.Location.Layout.RoomDescPlaceholder'}}">{{data.room3Desc}}</textarea>
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="roomDescs">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

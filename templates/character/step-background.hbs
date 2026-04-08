@@ -1,0 +1,54 @@
+<section class="lore-forge-step" data-step="background">
+  <h2>{{localize "LORE_FORGE.Character.Steps.Background"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Character.Background.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Backstory --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Background.Backstory"}}</label>
+      <div class="inspiration-row">
+        <textarea name="backstory" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Character.Background.BackstoryPlaceholder'}}">{{data.backstory}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="backstories">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Motivation --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Background.Motivation"}}</label>
+      <div class="inspiration-row">
+        <textarea name="motivation" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Background.MotivationPlaceholder'}}">{{data.motivation}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="motivations">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Secret --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Background.Secret"}}</label>
+      <div class="inspiration-row">
+        <textarea name="secret" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Background.SecretPlaceholder'}}">{{data.secret}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="secrets">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Fears --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Background.Fears"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="fears" value="{{data.fears}}"
+               placeholder="{{localize 'LORE_FORGE.Character.Background.FearsPlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="fears">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

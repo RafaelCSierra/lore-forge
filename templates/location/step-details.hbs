@@ -1,0 +1,66 @@
+<section class="lore-forge-step" data-step="details">
+  <h2>{{localize "LORE_FORGE.Location.Steps.Details"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Location.Details.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Description --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Details.Description"}}</label>
+      <div class="inspiration-row">
+        <textarea name="description" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Location.Details.DescriptionPlaceholder'}}">{{data.description}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="descriptions">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Atmosphere --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Details.Atmosphere"}}</label>
+      <div class="inspiration-row">
+        <textarea name="atmosphere" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Location.Details.AtmospherePlaceholder'}}">{{data.atmosphere}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="atmospheres">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Notable Features --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Details.Features"}}</label>
+      <div class="inspiration-row">
+        <textarea name="notableFeatures" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Location.Details.FeaturesPlaceholder'}}">{{data.notableFeatures}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="features">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Goods & Services --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Details.GoodsServices"}}</label>
+      <div class="inspiration-row">
+        <textarea name="goodsServices" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Location.Details.GoodsServicesPlaceholder'}}">{{data.goodsServices}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="goodsServices">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Dangers --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Details.Dangers"}}</label>
+      <div class="inspiration-row">
+        <textarea name="dangers" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Location.Details.DangersPlaceholder'}}">{{data.dangers}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="dangers">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

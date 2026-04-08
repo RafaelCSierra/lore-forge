@@ -1,0 +1,80 @@
+<section class="lore-forge-step" data-step="identity">
+  <h2>{{localize "LORE_FORGE.Settlement.Steps.Identity"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Settlement.Identity.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Settlement Name --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Identity.Name"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="name" value="{{data.name}}"
+               placeholder="{{localize 'LORE_FORGE.Settlement.Identity.NamePlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="names">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Settlement Size --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Identity.Size"}}</label>
+      <select name="settlementSize">
+        {{#each settlementSizes}}
+        <option value="{{this.value}}" {{#if (eq ../data.settlementSize this.value)}}selected{{/if}}>
+          {{localize this.label}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+
+    {{!-- Region --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Common.Region"}}</label>
+      <select name="regionId">
+        <option value="">{{localize "LORE_FORGE.Common.RegionNone"}}</option>
+        {{#each regions}}
+        <option value="{{this.id}}" {{#if (eq ../data.regionId this.id)}}selected{{/if}}>
+          {{this.name}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+
+    {{!-- Population (dropdown based on size) --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Identity.Population"}}</label>
+      <select name="population">
+        <option value="">{{localize "LORE_FORGE.Settlement.Identity.PopulationPlaceholder"}}</option>
+        {{#each populationOptions}}
+        <option value="{{this.value}}" {{#if (eq ../data.population this.value)}}selected{{/if}}>
+          {{this.label}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+
+    {{!-- Leader Name --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Identity.LeaderName"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="leaderName" value="{{data.leaderName}}"
+               placeholder="{{localize 'LORE_FORGE.Settlement.Identity.LeaderNamePlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="leaderNames">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Leader Description --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Identity.LeaderDesc"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="leaderDesc" value="{{data.leaderDesc}}"
+               placeholder="{{localize 'LORE_FORGE.Settlement.Identity.LeaderDescPlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="leaderDescs">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

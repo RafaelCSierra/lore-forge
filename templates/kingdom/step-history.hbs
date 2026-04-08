@@ -1,0 +1,54 @@
+<section class="lore-forge-step" data-step="history">
+  <h2>{{localize "LORE_FORGE.Kingdom.Steps.History"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Kingdom.History.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Founding Story --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.History.FoundingStory"}}</label>
+      <div class="inspiration-row">
+        <textarea name="foundingStory" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.History.FoundingStoryPlaceholder'}}">{{data.foundingStory}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="foundingStories">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Historical Events --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.History.HistoricalEvents"}}</label>
+      <div class="inspiration-row">
+        <textarea name="historicalEvents" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.History.HistoricalEventsPlaceholder'}}">{{data.historicalEvents}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="historicalEvents">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Legends --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.History.Legends"}}</label>
+      <div class="inspiration-row">
+        <textarea name="legends" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.History.LegendsPlaceholder'}}">{{data.legends}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="legends">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Historical Figures --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.History.HistoricalFigures"}}</label>
+      <div class="inspiration-row">
+        <textarea name="historicalFigures" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.History.HistoricalFiguresPlaceholder'}}">{{data.historicalFigures}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="historicalFigures">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+<section class="lore-forge-step" data-step="identity">
+  <h2>{{localize "LORE_FORGE.Kingdom.Steps.Identity"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Kingdom.Identity.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Kingdom Name --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Identity.Name"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="name" value="{{data.name}}"
+               placeholder="{{localize 'LORE_FORGE.Kingdom.Identity.NamePlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="names">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Kingdom Type --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Identity.Type"}}</label>
+      <select name="kingdomType">
+        {{#each kingdomTypes}}
+        <option value="{{this.value}}" {{#if (eq ../data.kingdomType this.value)}}selected{{/if}}>
+          {{localize this.label}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+
+    {{!-- Motto --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Identity.Motto"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="motto" value="{{data.motto}}"
+               placeholder="{{localize 'LORE_FORGE.Kingdom.Identity.MottoPlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="mottos">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

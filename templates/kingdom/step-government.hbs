@@ -1,0 +1,66 @@
+<section class="lore-forge-step" data-step="government">
+  <h2>{{localize "LORE_FORGE.Kingdom.Steps.Government"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Kingdom.Government.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Government Type --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Government.Type"}}</label>
+      <select name="govType">
+        {{#each govTypes}}
+        <option value="{{this.value}}" {{#if (eq ../data.govType this.value)}}selected{{/if}}>
+          {{localize this.label}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+
+    {{!-- Ruler Name --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Government.RulerName"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="rulerName" value="{{data.rulerName}}"
+               placeholder="{{localize 'LORE_FORGE.Kingdom.Government.RulerNamePlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="rulerNames">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Ruler Description --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Government.RulerDesc"}}</label>
+      <div class="inspiration-row">
+        <textarea name="rulerDesc" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.Government.RulerDescPlaceholder'}}">{{data.rulerDesc}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="rulerTraits">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Culture --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Government.Culture"}}</label>
+      <div class="inspiration-row">
+        <textarea name="culture" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.Government.CulturePlaceholder'}}">{{data.culture}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="cultures">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Social Structure --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Government.SocialStructure"}}</label>
+      <div class="inspiration-row">
+        <textarea name="socialStructure" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.Government.SocialStructurePlaceholder'}}">{{data.socialStructure}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="socialStructures">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

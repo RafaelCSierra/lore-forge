@@ -1,0 +1,42 @@
+<section class="lore-forge-step" data-step="encounters">
+  <h2>{{localize "LORE_FORGE.Location.Steps.Encounters"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Location.Encounters.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Encounters --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Encounters.Encounters"}}</label>
+      <div class="inspiration-row">
+        <textarea name="encounters" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Location.Encounters.EncountersPlaceholder'}}">{{data.encounters}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="encounters">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Recurring Events --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Encounters.RecurringEvents"}}</label>
+      <div class="inspiration-row">
+        <textarea name="recurringEvents" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Location.Encounters.RecurringEventsPlaceholder'}}">{{data.recurringEvents}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="recurringEvents">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Random Encounters --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Encounters.RandomEncounters"}}</label>
+      <div class="inspiration-row">
+        <textarea name="randomEncounters" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Location.Encounters.RandomEncountersPlaceholder'}}">{{data.randomEncounters}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="randomEncounters">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

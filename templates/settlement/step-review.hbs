@@ -1,0 +1,182 @@
+<section class="lore-forge-step" data-step="review">
+  <h2>{{localize "LORE_FORGE.Settlement.Steps.Review"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Settlement.Review.Desc"}}</p>
+
+  <div class="lf-review-preview">
+    {{!-- Identity --}}
+    <h3><i class="fas fa-city"></i> {{data.name}}</h3>
+
+    {{#if regionName}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Common.Region"}}:</span>
+      {{regionName}}
+    </div>
+    {{/if}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Size"}}:</span>
+      {{settlementSizeLabel}}
+    </div>
+    {{#if data.population}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Population"}}:</span>
+      {{data.population}}
+    </div>
+    {{/if}}
+    {{#if data.leaderName}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Leader"}}:</span>
+      {{data.leaderName}}{{#if data.leaderDesc}} — {{data.leaderDesc}}{{/if}}
+    </div>
+    {{/if}}
+
+    {{!-- Geography --}}
+    {{#if hasGeography}}
+    <h4><i class="fas fa-map"></i> {{localize "LORE_FORGE.Settlement.Review.Geography"}}</h4>
+    {{#each districts}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{this.name}}:</span>
+      {{this.desc}}
+    </div>
+    {{/each}}
+    {{#if data.landmarks}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Landmarks"}}:</span>
+      {{data.landmarks}}
+    </div>
+    {{/if}}
+    {{#if data.defenses}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Defenses"}}:</span>
+      {{data.defenses}}
+    </div>
+    {{/if}}
+    {{/if}}
+
+    {{!-- History & Laws --}}
+    {{#if hasHistory}}
+    <h4><i class="fas fa-book-open"></i> {{localize "LORE_FORGE.Settlement.Review.History"}}</h4>
+    {{#if data.founding}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Founding"}}:</span>
+      {{data.founding}}
+    </div>
+    {{/if}}
+    {{#if data.customs}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Customs"}}:</span>
+      {{data.customs}}
+    </div>
+    {{/if}}
+    {{#if data.localLaws}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.LocalLaws"}}:</span>
+      {{data.localLaws}}
+    </div>
+    {{/if}}
+    {{#if data.festivals}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Festivals"}}:</span>
+      {{data.festivals}}
+    </div>
+    {{/if}}
+    {{/if}}
+
+    {{!-- Trade & Buildings --}}
+    {{#if hasTrade}}
+    <h4><i class="fas fa-store"></i> {{localize "LORE_FORGE.Settlement.Review.Trade"}}</h4>
+    {{#if data.market}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Market"}}:</span>
+      {{data.market}}
+    </div>
+    {{/if}}
+    {{#if data.settlTradeRoutes}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.TradeRoutes"}}:</span>
+      {{data.settlTradeRoutes}}
+    </div>
+    {{/if}}
+    {{#if data.notableBuildings}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.NotableBuildings"}}:</span>
+      {{data.notableBuildings}}
+    </div>
+    {{/if}}
+    {{#if data.infrastructure}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Infrastructure"}}:</span>
+      {{data.infrastructure}}
+    </div>
+    {{/if}}
+    {{/if}}
+
+    {{!-- Religion & Guilds --}}
+    {{#if hasReligion}}
+    <h4><i class="fas fa-place-of-worship"></i> {{localize "LORE_FORGE.Settlement.Review.ReligionGuilds"}}</h4>
+    {{#if data.temples}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Temples"}}:</span>
+      {{data.temples}}
+    </div>
+    {{/if}}
+    {{#if data.guilds}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Guilds"}}:</span>
+      {{data.guilds}}
+    </div>
+    {{/if}}
+    {{#if data.organizations}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Organizations"}}:</span>
+      {{data.organizations}}
+    </div>
+    {{/if}}
+    {{#if data.criminalGroups}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.CriminalGroups"}}:</span>
+      {{data.criminalGroups}}
+    </div>
+    {{/if}}
+    {{/if}}
+
+    {{!-- Notable NPCs --}}
+    {{#if hasNPCs}}
+    <h4><i class="fas fa-user-group"></i> {{localize "LORE_FORGE.Settlement.Review.NotableNPCs"}}</h4>
+    {{#each npcs}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{this.name}}:</span>
+      {{this.role}}{{#if this.desc}} — {{this.desc}}{{/if}}
+    </div>
+    {{/each}}
+    {{/if}}
+
+    {{!-- Society --}}
+    {{#if hasSociety}}
+    <h4><i class="fas fa-users"></i> {{localize "LORE_FORGE.Settlement.Review.Society"}}</h4>
+    {{#if data.economy}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Economy"}}:</span>
+      {{data.economy}}
+    </div>
+    {{/if}}
+    {{#if data.culture}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Culture"}}:</span>
+      {{data.culture}}
+    </div>
+    {{/if}}
+    {{#if data.rumors}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Rumors"}}:</span>
+      {{data.rumors}}
+    </div>
+    {{/if}}
+    {{#if data.plotHooks}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.PlotHooks"}}:</span>
+      {{data.plotHooks}}
+    </div>
+    {{/if}}
+    {{/if}}
+  </div>
+</section>

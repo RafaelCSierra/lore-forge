@@ -1,0 +1,54 @@
+<section class="lore-forge-step" data-step="history">
+  <h2>{{localize "LORE_FORGE.Settlement.Steps.History"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Settlement.History.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Founding --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.History.Founding"}}</label>
+      <div class="inspiration-row">
+        <textarea name="founding" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.History.FoundingPlaceholder'}}">{{data.founding}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="foundingStories">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Customs --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.History.Customs"}}</label>
+      <div class="inspiration-row">
+        <textarea name="customs" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.History.CustomsPlaceholder'}}">{{data.customs}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="customs">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Local Laws --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.History.LocalLaws"}}</label>
+      <div class="inspiration-row">
+        <textarea name="localLaws" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.History.LocalLawsPlaceholder'}}">{{data.localLaws}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="localLaws">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Festivals --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.History.Festivals"}}</label>
+      <div class="inspiration-row">
+        <textarea name="festivals" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.History.FestivalsPlaceholder'}}">{{data.festivals}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="festivals">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

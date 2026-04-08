@@ -1,0 +1,176 @@
+<section class="lore-forge-step" data-step="review">
+  <h2>{{localize "LORE_FORGE.Location.Steps.Review"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Location.Review.Desc"}}</p>
+
+  <div class="lf-review-preview">
+    {{!-- Identity --}}
+    <h3><i class="fas fa-map-pin"></i> {{data.name}}</h3>
+
+    {{#if regionName}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Common.Region"}}:</span>
+      {{regionName}}
+    </div>
+    {{/if}}
+    {{#if settlementName}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Common.Settlement"}}:</span>
+      {{settlementName}}
+    </div>
+    {{/if}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.Type"}}:</span>
+      {{locationTypeLabel}}
+    </div>
+    {{#if data.ownerName}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.Owner"}}:</span>
+      {{data.ownerName}}{{#if data.ownerDesc}} — {{data.ownerDesc}}{{/if}}
+    </div>
+    {{/if}}
+
+    {{!-- Details --}}
+    {{#if hasDetails}}
+    <h4><i class="fas fa-eye"></i> {{localize "LORE_FORGE.Location.Review.Details"}}</h4>
+    {{#if data.description}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.Description"}}:</span>
+      {{data.description}}
+    </div>
+    {{/if}}
+    {{#if data.atmosphere}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.Atmosphere"}}:</span>
+      {{data.atmosphere}}
+    </div>
+    {{/if}}
+    {{#if data.notableFeatures}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.Features"}}:</span>
+      {{data.notableFeatures}}
+    </div>
+    {{/if}}
+    {{#if data.goodsServices}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.GoodsServices"}}:</span>
+      {{data.goodsServices}}
+    </div>
+    {{/if}}
+    {{#if data.dangers}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.Dangers"}}:</span>
+      {{data.dangers}}
+    </div>
+    {{/if}}
+    {{/if}}
+
+    {{!-- History --}}
+    {{#if hasHistory}}
+    <h4><i class="fas fa-book-open"></i> {{localize "LORE_FORGE.Location.Review.History"}}</h4>
+    {{#if data.origin}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.Origin"}}:</span>
+      {{data.origin}}
+    </div>
+    {{/if}}
+    {{#if data.pastEvents}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.PastEvents"}}:</span>
+      {{data.pastEvents}}
+    </div>
+    {{/if}}
+    {{#if data.locationLegends}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.LocationLegends"}}:</span>
+      {{data.locationLegends}}
+    </div>
+    {{/if}}
+    {{/if}}
+
+    {{!-- Layout & Rooms --}}
+    {{#if hasLayout}}
+    <h4><i class="fas fa-dungeon"></i> {{localize "LORE_FORGE.Location.Review.Layout"}}</h4>
+    {{#if data.spatialDesc}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.SpatialDesc"}}:</span>
+      {{data.spatialDesc}}
+    </div>
+    {{/if}}
+    {{#each rooms}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{this.name}}:</span>
+      {{this.desc}}
+    </div>
+    {{/each}}
+    {{/if}}
+
+    {{!-- Encounters & Events --}}
+    {{#if hasEncounters}}
+    <h4><i class="fas fa-dragon"></i> {{localize "LORE_FORGE.Location.Review.Encounters"}}</h4>
+    {{#if data.encounters}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.EncountersList"}}:</span>
+      {{data.encounters}}
+    </div>
+    {{/if}}
+    {{#if data.recurringEvents}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.RecurringEvents"}}:</span>
+      {{data.recurringEvents}}
+    </div>
+    {{/if}}
+    {{#if data.randomEncounters}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.RandomEncounters"}}:</span>
+      {{data.randomEncounters}}
+    </div>
+    {{/if}}
+    {{/if}}
+
+    {{!-- Treasure & Inventory --}}
+    {{#if hasTreasure}}
+    <h4><i class="fas fa-gem"></i> {{localize "LORE_FORGE.Location.Review.Treasure"}}</h4>
+    {{#if data.notableItems}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.NotableItems"}}:</span>
+      {{data.notableItems}}
+    </div>
+    {{/if}}
+    {{#if data.hiddenTreasure}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.HiddenTreasure"}}:</span>
+      {{data.hiddenTreasure}}
+    </div>
+    {{/if}}
+    {{#if data.stock}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.Stock"}}:</span>
+      {{data.stock}}
+    </div>
+    {{/if}}
+    {{/if}}
+
+    {{!-- Hooks --}}
+    {{#if hasHooks}}
+    <h4><i class="fas fa-comment-dots"></i> {{localize "LORE_FORGE.Location.Review.Hooks"}}</h4>
+    {{#if data.rumors}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.Rumors"}}:</span>
+      {{data.rumors}}
+    </div>
+    {{/if}}
+    {{#if data.secrets}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.Secrets"}}:</span>
+      {{data.secrets}}
+    </div>
+    {{/if}}
+    {{#if data.plotHooks}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Location.Review.PlotHooks"}}:</span>
+      {{data.plotHooks}}
+    </div>
+    {{/if}}
+    {{/if}}
+  </div>
+</section>

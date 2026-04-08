@@ -1,0 +1,165 @@
+<section class="lore-forge-step" data-step="geography">
+  <h2>{{localize "LORE_FORGE.Settlement.Steps.Geography"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Settlement.Geography.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- District 1 --}}
+    {{#if showDistrict1}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Settlement.Geography.DistrictLabel"}} 1</h4>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Settlement.Geography.DistrictName"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="district1Name" value="{{data.district1Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Settlement.Geography.DistrictNamePlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="districtNames">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Settlement.Geography.DistrictDesc"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="district1Desc" value="{{data.district1Desc}}"
+                 placeholder="{{localize 'LORE_FORGE.Settlement.Geography.DistrictDescPlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="districtDescs">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+
+    {{!-- District 2 --}}
+    {{#if showDistrict2}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Settlement.Geography.DistrictLabel"}} 2</h4>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Settlement.Geography.DistrictName"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="district2Name" value="{{data.district2Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Settlement.Geography.DistrictNamePlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="districtNames">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Settlement.Geography.DistrictDesc"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="district2Desc" value="{{data.district2Desc}}"
+                 placeholder="{{localize 'LORE_FORGE.Settlement.Geography.DistrictDescPlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="districtDescs">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+
+    {{!-- District 3 --}}
+    {{#if showDistrict3}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Settlement.Geography.DistrictLabel"}} 3</h4>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Settlement.Geography.DistrictName"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="district3Name" value="{{data.district3Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Settlement.Geography.DistrictNamePlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="districtNames">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Settlement.Geography.DistrictDesc"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="district3Desc" value="{{data.district3Desc}}"
+                 placeholder="{{localize 'LORE_FORGE.Settlement.Geography.DistrictDescPlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="districtDescs">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+
+    {{!-- District 4 --}}
+    {{#if showDistrict4}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Settlement.Geography.DistrictLabel"}} 4</h4>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Settlement.Geography.DistrictName"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="district4Name" value="{{data.district4Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Settlement.Geography.DistrictNamePlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="districtNames">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Settlement.Geography.DistrictDesc"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="district4Desc" value="{{data.district4Desc}}"
+                 placeholder="{{localize 'LORE_FORGE.Settlement.Geography.DistrictDescPlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="districtDescs">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+
+    {{!-- District 5 --}}
+    {{#if showDistrict5}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Settlement.Geography.DistrictLabel"}} 5</h4>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Settlement.Geography.DistrictName"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="district5Name" value="{{data.district5Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Settlement.Geography.DistrictNamePlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="districtNames">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Settlement.Geography.DistrictDesc"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="district5Desc" value="{{data.district5Desc}}"
+                 placeholder="{{localize 'LORE_FORGE.Settlement.Geography.DistrictDescPlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="districtDescs">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+
+    {{!-- Landmarks --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Geography.Landmarks"}}</label>
+      <div class="inspiration-row">
+        <textarea name="landmarks" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Geography.LandmarksPlaceholder'}}">{{data.landmarks}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="landmarks">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Defenses --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Geography.Defenses"}}</label>
+      <div class="inspiration-row">
+        <textarea name="defenses" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Geography.DefensesPlaceholder'}}">{{data.defenses}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="defenses">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

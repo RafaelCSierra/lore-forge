@@ -1,0 +1,988 @@
+/* ============================================
+   Lore Forge - Wizard Styles
+   Compatible with Foundry VTT v13 dark theme
+   ============================================ */
+
+/* --- Theme Variables --- */
+.lore-forge-wizard {
+  --lf-accent: #7b68ee;
+  --lf-accent-light: #b8a9ff;
+  --lf-success: #4a8c5c;
+  --lf-danger: #e74c3c;
+}
+
+/* --- App Window --- */
+.lore-forge-wizard {
+  min-width: 580px;
+  min-height: 520px;
+}
+
+.lore-forge-wizard .window-content {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.lore-forge-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.lore-forge-steps-container {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Step Visibility --- */
+.lore-forge-step {
+  display: none;
+  padding: 12px 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.lore-forge-step.active {
+  display: block;
+}
+
+/* --- Step Headers --- */
+.lore-forge-step h2 {
+  margin: 0 0 4px 0;
+  font-size: 1.2em;
+  border-bottom: 2px solid color-mix(in srgb, currentColor 40%, transparent);
+  padding-bottom: 4px;
+}
+
+.lore-forge-step .step-description {
+  margin: 0 0 12px 0;
+  font-style: italic;
+  opacity: 0.7;
+  font-size: 0.9em;
+}
+
+/* --- Step Indicator Bar --- */
+.lore-forge-steps-bar {
+  display: flex;
+  gap: 0;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lore-forge-steps-bar .step-indicator {
+  flex: 1;
+  text-align: center;
+  padding: 6px 4px;
+  font-size: 0.8em;
+  opacity: 0.4;
+  border-bottom: 3px solid transparent;
+  cursor: default;
+  transition: opacity 0.2s;
+}
+
+.lore-forge-steps-bar .step-indicator.active {
+  opacity: 1;
+  font-weight: bold;
+  border-bottom-color: var(--lf-accent);
+}
+
+.lore-forge-steps-bar .step-indicator.completed {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.lore-forge-steps-bar .step-indicator.completed:hover {
+  opacity: 1;
+}
+
+.lore-forge-steps-bar .step-indicator .step-number {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+  font-size: 0.75em;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.lore-forge-steps-bar .step-indicator.active .step-number {
+  background: var(--lf-accent);
+  color: #fff;
+}
+
+.lore-forge-steps-bar .step-indicator.completed .step-number {
+  background: var(--lf-success);
+  color: white;
+}
+
+/* Compact step bar for 7+ steps */
+.lore-forge-steps-bar.compact .step-indicator {
+  font-size: 0.7em;
+  padding: 4px 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lore-forge-steps-bar.compact .step-indicator .step-number {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 0.7em;
+  margin-right: 2px;
+}
+
+/* --- Navigation Buttons --- */
+.lore-forge-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.lore-forge-nav button {
+  min-width: 100px;
+}
+
+.lore-forge-nav button[data-action="forge"] {
+  background: var(--lf-success);
+  color: white;
+  font-weight: bold;
+  border-color: color-mix(in srgb, var(--lf-success) 80%, black);
+}
+
+.lore-forge-nav button[data-action="forge"]:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--lf-success) 85%, white);
+}
+
+.lore-forge-nav button[data-action="forge"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* --- Fieldset --- */
+.lore-forge-step fieldset {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  padding: 8px;
+  margin: 0 0 12px 0;
+}
+
+.lore-forge-step fieldset legend {
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 0 4px;
+}
+
+/* ============================================
+   Inspiration Row — Field + d20 button
+   ============================================ */
+.inspiration-row {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.inspiration-row input,
+.inspiration-row textarea,
+.inspiration-row select {
+  flex: 1;
+}
+
+.lore-forge-wizard .inspire-btn {
+  all: unset;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--lf-accent) 15%, transparent);
+  cursor: pointer;
+  color: var(--lf-accent-light);
+  font-size: 0.9em;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.lore-forge-wizard .inspire-btn:hover {
+  background: color-mix(in srgb, var(--lf-accent) 35%, transparent);
+  border-color: var(--lf-accent);
+}
+
+/* Textarea inspiration — align button to top */
+.inspiration-row textarea + .inspire-btn {
+  margin-top: 2px;
+}
+
+/* ============================================
+   Card Grid (Culture, Role, Kingdom Type, etc.)
+   ============================================ */
+.lore-forge-wizard .lf-card {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 4px 6px;
+  min-height: 56px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  text-align: center;
+  font-family: inherit;
+  font-size: 0.85em;
+  color: inherit;
+}
+
+.lore-forge-wizard .lf-card:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lore-forge-wizard .lf-card.selected {
+  border-color: var(--lf-accent);
+  background: color-mix(in srgb, var(--lf-accent) 15%, transparent);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--lf-accent) 30%, transparent);
+}
+
+.lore-forge-wizard .lf-card span {
+  all: unset;
+  display: block;
+}
+
+.lore-forge-wizard .lf-card-icon {
+  font-size: 1.6em;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.lore-forge-wizard .lf-card-label {
+  font-size: 0.85em;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.lf-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.lf-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.lf-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+/* ============================================
+   Sub-Culture Panel
+   ============================================ */
+.lf-subculture-panel {
+  border: 1px solid color-mix(in srgb, var(--lf-accent) 30%, transparent);
+  border-radius: 4px;
+  padding: 8px;
+  margin: 0 0 12px 0;
+  background: color-mix(in srgb, var(--lf-accent) 5%, transparent);
+  animation: lf-slide-in 0.2s ease-out;
+}
+
+@keyframes lf-slide-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.lf-subculture-panel legend {
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 0 4px;
+  color: var(--lf-accent-light);
+}
+
+.lf-grid-subcult {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lore-forge-wizard .lf-card-sub {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+  font-size: 0.85em;
+  color: inherit;
+}
+
+.lore-forge-wizard .lf-card-sub:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lore-forge-wizard .lf-card-sub.selected {
+  border-color: var(--lf-accent);
+  background: color-mix(in srgb, var(--lf-accent) 15%, transparent);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--lf-accent) 30%, transparent);
+}
+
+.lf-card-sub-icon {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.lf-card-sub-label {
+  font-size: 0.9em;
+  line-height: 1.1;
+}
+
+/* ============================================
+   Name Chips (same as npc-forge)
+   ============================================ */
+.lf-name-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.lore-forge-wizard .lf-name-chip {
+  all: unset;
+  box-sizing: border-box;
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  font-size: 0.9em;
+  font-family: inherit;
+  color: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.lore-forge-wizard .lf-name-chip:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lore-forge-wizard .lf-name-chip.selected {
+  border-color: var(--lf-accent);
+  background: color-mix(in srgb, var(--lf-accent) 15%, transparent);
+  font-weight: bold;
+}
+
+.lore-forge-wizard .lf-name-chip.randomize-btn {
+  border-style: dashed;
+  opacity: 0.7;
+}
+
+.lore-forge-wizard .lf-name-chip.randomize-btn:hover {
+  opacity: 1;
+}
+
+/* ============================================
+   Form Layout
+   ============================================ */
+.lf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lf-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lf-form label {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.lf-form textarea {
+  resize: vertical;
+}
+
+.lf-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Gender radio */
+.lf-gender-options {
+  display: flex;
+  gap: 16px;
+}
+
+.lf-gender-options label {
+  cursor: pointer;
+  font-weight: normal;
+}
+
+/* Name custom input row */
+.lf-name-custom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lf-name-custom label {
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.lf-name-custom input {
+  flex: 1;
+}
+
+/* ============================================
+   Faction / Connection Entries
+   ============================================ */
+.lf-entry-block {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.lf-entry-block h4 {
+  margin: 0 0 6px 0;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* ============================================
+   Review — Journal Preview
+   ============================================ */
+.lf-review-preview {
+  border: 2px solid var(--lf-accent);
+  border-radius: 6px;
+  padding: 16px;
+  background: color-mix(in srgb, var(--lf-accent) 5%, transparent);
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.lf-review-preview h3 {
+  margin: 0 0 4px 0;
+  color: var(--lf-accent-light);
+  border-bottom: 1px solid color-mix(in srgb, var(--lf-accent) 30%, transparent);
+  padding-bottom: 4px;
+}
+
+.lf-review-preview h4 {
+  margin: 12px 0 4px 0;
+  color: var(--lf-accent-light);
+}
+
+.lf-review-preview .lf-field {
+  margin: 4px 0;
+}
+
+.lf-review-preview .lf-field-label {
+  font-weight: bold;
+}
+
+.lf-review-preview .lf-section {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   Review — Improved Badges & Sections
+   ============================================ */
+.lf-review-header {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--lf-accent);
+}
+
+.lf-review-header h3 {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 6px !important;
+}
+
+.lf-review-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lf-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.lf-badge-culture {
+  background: color-mix(in srgb, var(--lf-accent) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--lf-accent) 50%, transparent);
+  color: var(--lf-accent-light);
+}
+
+.lf-badge-subculture {
+  background: rgba(160, 120, 255, 0.15);
+  border: 1px solid rgba(160, 120, 255, 0.4);
+  color: #c4b0ff;
+}
+
+
+.lf-badge-role {
+  background: rgba(230, 126, 34, 0.2);
+  border: 1px solid rgba(230, 126, 34, 0.5);
+  color: #f0a060;
+}
+
+.lf-review-section {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lf-review-section h4 {
+  margin: 0 0 6px 0;
+}
+
+.lf-field-secret {
+  border-left: 3px solid var(--lf-danger);
+  padding-left: 10px;
+  margin: 6px 0;
+  background: color-mix(in srgb, var(--lf-danger) 8%, transparent);
+  border-radius: 0 4px 4px 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.lf-review-relation {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin: 3px 4px 3px 0;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.95em;
+}
+
+.lf-review-relation strong {
+  color: var(--lf-accent-light);
+}
+
+.lf-review-relation .lf-relation-type {
+  opacity: 0.7;
+  font-size: 0.85em;
+}
+
+/* ============================================
+   "Inspire All" Button
+   ============================================ */
+.lore-forge-wizard .lf-inspire-all-btn {
+  all: unset;
+  box-sizing: border-box;
+  padding: 2px 10px;
+  font-size: 0.75em;
+  font-family: inherit;
+  color: var(--lf-accent-light);
+  border: 1px solid color-mix(in srgb, var(--lf-accent) 40%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--lf-accent) 10%, transparent);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.lore-forge-wizard .lf-inspire-all-btn:hover {
+  background: color-mix(in srgb, var(--lf-accent) 25%, transparent);
+  border-color: var(--lf-accent);
+}
+
+/* ============================================
+   Draft Saved Indicator
+   ============================================ */
+.lf-draft-indicator {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 0.7em;
+  color: var(--lf-success);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.lf-draft-indicator.visible {
+  opacity: 1;
+}
+
+/* ============================================
+   Reset Button
+   ============================================ */
+.lore-forge-nav .lf-reset-btn {
+  opacity: 0.7;
+  font-size: 0.85em;
+}
+
+.lore-forge-nav .lf-reset-btn:hover {
+  opacity: 1;
+}
+
+/* ============================================
+   Lore Forge Selection Dialog
+   ============================================ */
+.lore-forge-dialog {
+  min-width: 380px;
+}
+
+.lore-forge-dialog .window-content {
+  padding: 0;
+}
+
+.lf-dialog-body {
+  padding: 12px 16px;
+}
+
+.lf-dialog-prompt {
+  margin: 0 0 12px 0;
+  text-align: center;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.lf-dialog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.lf-dialog-card {
+  all: unset;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 16px 8px 12px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  text-align: center;
+  font-family: inherit;
+  color: inherit;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+
+.lf-dialog-card:hover {
+  border-color: var(--lf-accent, #7b68ee);
+  background: color-mix(in srgb, #7b68ee 12%, transparent);
+  box-shadow: 0 0 8px color-mix(in srgb, #7b68ee 25%, transparent);
+}
+
+.lf-dialog-card-icon {
+  font-size: 1.8em;
+  color: var(--lf-accent-light, #b8a9ff);
+  margin-bottom: 2px;
+}
+
+.lf-dialog-card-title {
+  font-weight: bold;
+  font-size: 0.95em;
+}
+
+.lf-dialog-card-desc {
+  font-size: 0.75em;
+  opacity: 0.65;
+  line-height: 1.2;
+}
+
+.lf-dialog-draft-badge {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 0.7em;
+  color: var(--lf-accent-light, #b8a9ff);
+  opacity: 0.8;
+}
+
+/* =========================================================================
+   World Forge Importer
+   ========================================================================= */
+
+.lf-wf-wrapper {
+  padding: 1rem;
+}
+
+.lf-wf-step-title {
+  margin: 0 0 1rem;
+  font-size: 1.05em;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.5rem;
+}
+
+.lf-wf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.lf-wf-file-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.lf-wf-file-group label {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+.lf-wf-load-btn {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--lf-accent, #7b68ee);
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: var(--lf-accent-light, #b8a9ff);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.lf-wf-load-btn:hover {
+  background: color-mix(in srgb, #7b68ee 15%, transparent);
+}
+
+/* Preview box */
+.lf-wf-preview-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.lf-wf-preview-name {
+  font-weight: bold;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lf-wf-preview-setting {
+  font-size: 0.82em;
+  opacity: 0.65;
+}
+
+.lf-wf-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.lf-wf-count-badge {
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.78em;
+}
+
+/* Type selection */
+.lf-wf-section-label {
+  font-size: 0.82em;
+  opacity: 0.7;
+  margin-bottom: 0.1rem;
+}
+
+.lf-wf-type-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.lf-wf-type-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88em;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: background 0.1s;
+}
+
+.lf-wf-type-row:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.lf-wf-type-label {
+  flex: 1;
+}
+
+.lf-wf-type-count {
+  font-size: 0.8em;
+  opacity: 0.55;
+  min-width: 1.5em;
+  text-align: right;
+}
+
+.lf-wf-option-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88em;
+}
+
+.lf-wf-option-row input[type="text"] {
+  flex: 1;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  color: inherit;
+  font-size: 0.9em;
+}
+
+/* Progress */
+.lf-wf-progress-bar-wrap {
+  background: rgba(255,255,255,0.08);
+  border-radius: 99px;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 0.4rem;
+}
+
+.lf-wf-progress-bar {
+  height: 100%;
+  background: var(--lf-accent, #7b68ee);
+  border-radius: 99px;
+  transition: width 0.2s;
+}
+
+.lf-wf-progress-label {
+  font-size: 0.78em;
+  opacity: 0.6;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.lf-wf-done-msg {
+  font-size: 0.9em;
+  margin-bottom: 0.5rem;
+}
+
+.lf-wf-result-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+  max-height: 180px;
+  overflow-y: auto;
+  font-size: 0.82em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.lf-wf-result-ok {
+  color: #7ec98a;
+}
+
+.lf-wf-result-err {
+  color: #e87070;
+}
+
+/* Footer buttons */
+.lf-wf-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 0.75rem;
+}
+
+.lf-wf-btn-primary,
+.lf-wf-btn-secondary {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  font-size: 0.88em;
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.lf-wf-btn-primary {
+  background: var(--lf-accent, #7b68ee);
+  color: #fff;
+  font-weight: bold;
+}
+
+.lf-wf-btn-primary:hover {
+  background: color-mix(in srgb, var(--lf-accent, #7b68ee) 80%, white);
+  box-shadow: 0 0 8px color-mix(in srgb, #7b68ee 40%, transparent);
+}
+
+.lf-wf-btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.lf-wf-btn-secondary {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: inherit;
+}
+
+.lf-wf-btn-secondary:hover {
+  background: rgba(255,255,255,0.07);
+}

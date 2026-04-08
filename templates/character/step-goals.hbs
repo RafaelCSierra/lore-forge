@@ -1,0 +1,54 @@
+<section class="lore-forge-step" data-step="goals">
+  <h2>{{localize "LORE_FORGE.Character.Steps.Goals"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Character.Goals.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Short-Term Goals --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Goals.ShortTermGoals"}}</label>
+      <div class="inspiration-row">
+        <textarea name="shortTermGoals" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Goals.ShortTermGoalsPlaceholder'}}">{{data.shortTermGoals}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="shortTermGoals">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Long-Term Goals --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Goals.LongTermGoals"}}</label>
+      <div class="inspiration-row">
+        <textarea name="longTermGoals" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Goals.LongTermGoalsPlaceholder'}}">{{data.longTermGoals}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="longTermGoals">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Moral Dilemmas --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Goals.MoralDilemmas"}}</label>
+      <div class="inspiration-row">
+        <textarea name="moralDilemmas" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Goals.MoralDilemmasPlaceholder'}}">{{data.moralDilemmas}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="moralDilemmas">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Internal Conflicts --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Goals.InternalConflicts"}}</label>
+      <div class="inspiration-row">
+        <textarea name="internalConflicts" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Goals.InternalConflictsPlaceholder'}}">{{data.internalConflicts}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="internalConflicts">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

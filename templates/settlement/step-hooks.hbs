@@ -1,0 +1,54 @@
+<section class="lore-forge-step" data-step="hooks">
+  <h2>{{localize "LORE_FORGE.Settlement.Steps.Hooks"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Settlement.Hooks.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Economy --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Hooks.Economy"}}</label>
+      <div class="inspiration-row">
+        <textarea name="economy" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Hooks.EconomyPlaceholder'}}">{{data.economy}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="economies">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Culture --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Hooks.Culture"}}</label>
+      <div class="inspiration-row">
+        <textarea name="culture" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Hooks.CulturePlaceholder'}}">{{data.culture}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="cultures">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Rumors --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Hooks.Rumors"}}</label>
+      <div class="inspiration-row">
+        <textarea name="rumors" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Hooks.RumorsPlaceholder'}}">{{data.rumors}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="rumors">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Plot Hooks --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Hooks.PlotHooks"}}</label>
+      <div class="inspiration-row">
+        <textarea name="plotHooks" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Hooks.PlotHooksPlaceholder'}}">{{data.plotHooks}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="plotHooks">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

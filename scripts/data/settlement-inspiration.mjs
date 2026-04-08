@@ -1,0 +1,438 @@
+/**
+ * Settlement inspiration database.
+ * Arrays of strings organized by field for random inspiration.
+ */
+
+export const SETTLEMENT_INSPIRATION = {
+
+  names: [
+    "Brindlewood", "Stormgate", "Ashford", "Crystalhaven", "Dunmere",
+    "Elmsworth", "Falcrest", "Greyhallow", "Harrowfield", "Ironvale",
+    "Kestrelton", "Larkspire", "Millhaven", "Northwatch", "Oakhurst",
+    "Pineridge", "Quarrystone", "Ravenshollow", "Silverdale", "Thornbury",
+    "Umber's Rest", "Valewood", "Winterfold", "Yarmouth", "Zinderfeld",
+    "Copperhill", "Dustmoor", "Foxbridge", "Goldenreach", "Hearthstone"
+  ],
+
+  leaderNames: [
+    "Mayor Aldric Thornton", "Elder Grandmother Wynn", "Baroness Celeste Duvall",
+    "Guildmaster Rodrik Hammerfall", "High Priestess Solara", "Captain Renna Stormwind",
+    "Council Speaker Varen Ashwood", "Burgrave Heinrik Kessler", "Chief Warchief Gronak",
+    "Lady Regent Isadora Crane", "Magistrate Feng Lao", "Thane Brunhilde Oathkeeper",
+    "Consul Alexei Petrov", "Headman Torben Longstride", "Archon Lysander the Just",
+    "Sheriff Marta Ironjaw", "Elder Oakroot", "Governor Priya Deshmukh",
+    "Lord Protector Cassius Drayne", "Speaker Naela Silversong"
+  ],
+
+  leaderDescs: [
+    "a pragmatic administrator who puts infrastructure above all else",
+    "a beloved community figure who has led for decades through tradition",
+    "an ambitious noble eager to expand the settlement's influence",
+    "a shrewd merchant-turned-politician who thinks in terms of profit",
+    "a spiritual leader who believes divine guidance should shape policy",
+    "a retired military commander who values order and discipline",
+    "a consensus-builder who tries to balance every faction's interests",
+    "a young idealist who wants to reform outdated traditions",
+    "a stern but fair ruler respected even by their opponents",
+    "a puppet leader secretly controlled by a criminal syndicate",
+    "a wizard who uses divination magic to guide their decisions",
+    "a revolutionary who rose from the common folk to challenge the elite",
+    "a weary leader burdened by a terrible secret about the town's founding",
+    "an outsider elected after the previous leader's mysterious death",
+    "a council of three who rarely agree on anything important"
+  ],
+
+  districtNames: [
+    "The Old Quarter", "Market Square", "Temple Row", "Dockside",
+    "The Warrens", "Noble's Hill", "Craftsman's Row", "The Foreign Quarter",
+    "Soldiers' Ward", "Scholar's End", "The Riverside", "Merchant's Mile",
+    "The Undercity", "Garden District", "Ironworks Quarter", "The Shambles",
+    "Hightown", "The Flats", "Harbour Walk", "The Commons"
+  ],
+
+  districtDescs: [
+    "the original settlement, with narrow winding streets and ancient buildings",
+    "a bustling open-air market where goods from distant lands change hands daily",
+    "a row of temples and shrines to various deities, incense always in the air",
+    "a rough waterfront area of warehouses, taverns, and sailors' boarding houses",
+    "a cramped maze of alleys where the poorest residents live in squalor",
+    "an elevated neighborhood of mansions, gardens, and gated estates",
+    "workshops and forges line every street, the sound of hammers constant",
+    "a diverse neighborhood where immigrants maintain their homeland traditions",
+    "the military barracks, training grounds, and armories of the town guard",
+    "home to the library, academy, and workshops of learned professionals",
+    "pleasant homes and parks along the water, popular for evening strolls",
+    "the commercial heart of the settlement, shops and guildhalls everywhere",
+    "a network of tunnels and chambers beneath the streets, officially denied",
+    "a green oasis of parks, fountains, and the estates of nature-lovers",
+    "a smoky industrial area of foundries, tanneries, and heavy workshops"
+  ],
+
+  landmarks: [
+    "A massive ancient tree at the center of town, believed to be sacred",
+    "A clocktower that hasn't worked in years but is too beloved to tear down",
+    "A statue of the town's legendary founder, worn smooth by centuries of rain",
+    "A natural hot spring that the town was originally built around",
+    "A bridge of unusual architecture that predates the settlement itself",
+    "A well in the town square that supposedly never runs dry",
+    "Ruins of an old fortress on a hill overlooking the settlement",
+    "A grand fountain depicting a battle between a hero and a dragon",
+    "An enormous mill powered by the river, the town's economic backbone",
+    "A standing stone circle on the outskirts, avoided by locals after dark",
+    "A lighthouse visible from anywhere in town, even though it's miles from the sea",
+    "A massive gate — the only remaining section of the original town walls",
+    "A natural cave system at the edge of town, used as wine cellars and storage",
+    "A monument to those who died in the Great War, maintained with fresh flowers daily",
+    "An aqueduct of dwarven engineering that brings fresh mountain water to the town"
+  ],
+
+  defenses: [
+    "A stone wall encircles the old town, though newer districts have grown beyond it",
+    "A well-trained town militia that drills weekly in the commons",
+    "A deep moat fed by diverted river water, crossed by three drawbridges",
+    "Natural cliffs on two sides and wooden palisades on the others",
+    "A hired mercenary company that serves as both guard and standing army",
+    "Watchtowers at every approach road, manned day and night",
+    "A magical ward that sounds an alarm when hostile forces approach",
+    "An underground escape tunnel system known only to the town council",
+    "Alliance with a nearby fortress that provides military support when needed",
+    "A trained griffon rider patrol that scouts the surrounding lands",
+    "Minimal defenses — the settlement relies on diplomacy and isolation",
+    "Thick hedgerows of magical thorns that grow back within hours if cut",
+    "A network of civilian informants in surrounding villages provides early warning",
+    "An ancient golem that activates to defend the town in times of great peril",
+    "A fleet of river patrol boats that control access from the waterway"
+  ],
+
+  economies: [
+    "Agriculture — vast farmlands produce grain that feeds the region",
+    "Mining — rich deposits of iron and copper drive the local economy",
+    "Trade hub — the settlement sits at the crossroads of major caravan routes",
+    "Fishing — the abundant waters provide both food and export goods",
+    "Craftsmanship — renowned artisans produce luxury goods sought across the realm",
+    "Logging — the surrounding forests provide timber for construction and export",
+    "Magical services — enchanters, alchemists, and healers draw customers from afar",
+    "Livestock — cattle ranching and horse breeding are the main livelihoods",
+    "Tourism — historic sites, hot springs, or festivals draw visitors year-round",
+    "Military contracts — the settlement supplies and equips armies",
+    "Smuggling — the official economy is modest, but the black market thrives",
+    "Brewing — famous ales and wines are exported throughout the region",
+    "Textiles — weavers and dyers produce fabrics prized for their quality",
+    "Quarrying — fine stone is extracted and shipped for construction projects",
+    "Mixed subsistence — most families are self-sufficient with small-scale trade"
+  ],
+
+  cultures: [
+    "Deeply traditional, with seasonal festivals marking the agricultural calendar",
+    "Cosmopolitan and tolerant, welcoming travelers and new ideas openly",
+    "Insular and suspicious, distrustful of outsiders and resistant to change",
+    "Pious and devout, with religious observance woven into daily life",
+    "Martial and proud, valuing strength, honor, and military service",
+    "Mercantile and pragmatic, where wealth determines social standing",
+    "Artistic and expressive, with murals, music, and theater everywhere",
+    "Scholarly and intellectual, home to an academy or school of note",
+    "Superstitious and cautious, with elaborate rituals to ward off evil",
+    "Egalitarian and communal, with shared resources and collective decisions",
+    "Competitive and ambitious, where personal achievement is celebrated",
+    "Stoic and hardworking, pride taken in endurance and self-reliance",
+    "Festive and joyous, any excuse for a celebration is embraced",
+    "Secretive and guarded, residents keep their affairs private",
+    "Nature-revering, with customs that honor the land and its spirits"
+  ],
+
+  rumors: [
+    "The town was built on the ruins of a much older and more sinister civilization",
+    "The leader has been seen meeting with a hooded figure outside town at night",
+    "Children have been disappearing from the outlying farms one by one",
+    "A massive treasure is supposedly buried somewhere beneath the market square",
+    "Strange lights appear above the town on the anniversary of its founding",
+    "The water in the old well has started tasting of iron and smelling of sulfur",
+    "A traveling merchant recently sold a cursed item that brought misfortune",
+    "The ghost of the town founder walks the streets during thunderstorms",
+    "An underground cult has been recruiting disaffected youth in the Warrens",
+    "A dragon was spotted flying over the surrounding hills last tenday",
+    "The blacksmith has been forging weapons in secret, far more than the town needs",
+    "Two prominent families are on the verge of a violent feud over land rights",
+    "A strange sickness affects only those who live near the old cemetery",
+    "The town's luck has turned since a wandering stranger passed through last month",
+    "Miners broke through into an ancient sealed chamber and won't say what they found"
+  ],
+
+  plotHooks: [
+    "The town council hires the party to investigate a series of livestock killings",
+    "A festival is disrupted when a genuine monster appears among the costumed revelers",
+    "The party arrives to find the town under quarantine for a mysterious plague",
+    "A prominent citizen offers a reward for recovering a stolen family heirloom",
+    "Two factions in town each try to recruit the party to their cause",
+    "The town's water supply has been poisoned and the party must find the source",
+    "An election is being held and both candidates want the party's public support",
+    "The party discovers that the town's prosperity comes from a dark bargain",
+    "A prison break releases dangerous criminals into the streets",
+    "The settlement is in the path of an approaching army and must prepare",
+    "A sinkhole opens in the town square, revealing ancient ruins below",
+    "The party is asked to negotiate a trade dispute with a neighboring settlement",
+    "Strange weather patterns threaten the harvest and may have a magical cause",
+    "A returning exile claims to be the rightful heir to the town's leadership",
+    "The party must escort a vital supply caravan through dangerous territory to the town"
+  ],
+
+  foundingStories: [
+    "Founded by refugees fleeing a great war, who swore to build a place of peace",
+    "Grew organically around a natural spring that never freezes, even in winter",
+    "Established as a frontier outpost by a now-fallen empire, the original fort still stands",
+    "Built atop ancient ruins that the founders discovered contained a powerful ward",
+    "Started as a bandit camp that gradually became legitimate over generations",
+    "Founded by a legendary hero who planted their sword in the ground and declared it home",
+    "Grew around a monastery whose monks offered healing to all who came",
+    "Established by a merchant guild as a trade waypoint between two great cities",
+    "Created when a dwarven mine was abandoned and human settlers moved into the tunnels",
+    "Born from the convergence of three nomadic tribes who agreed to settle together",
+    "Founded after a great flood forced coastal peoples to move inland to higher ground",
+    "Established by decree of a long-dead king who needed a garrison on the border",
+    "Grew around a lighthouse built by an eccentric wizard for reasons no one remembers",
+    "Created when a portal to the Feywild opened here and settlers came to study it",
+    "Founded by freed slaves who carved a home out of the wilderness"
+  ],
+
+  customs: [
+    "Everyone greets strangers with a gift of bread and salt as a sign of hospitality",
+    "Disputes are settled through public debate in the town square every Moonday",
+    "Children are named after the first animal seen on the morning of their birth",
+    "The dead are placed in hollow trees at the edge of town to return to nature",
+    "Every household keeps a lantern burning in the window to guide lost travelers",
+    "Marriages are sealed by planting a tree together, which the couple tends for life",
+    "Townsfolk paint protective symbols on their doors before each winter solstice",
+    "A communal feast is held whenever a new family moves to town",
+    "Elders sit in a circle of stones to make important community decisions",
+    "All debts are forgiven once a year during the Festival of Clean Slates",
+    "Storytelling competitions are held monthly, with the winner earning free drinks",
+    "Every citizen must learn a craft by age sixteen as a rite of passage",
+    "Visitors must ring the bell tower three times before entering the gates",
+    "The townspeople observe a day of silence each month to honor the dead",
+    "First-born children are apprenticed to a profession chosen by lottery"
+  ],
+
+  localLaws: [
+    "No magic may be cast within the market district without a permit from the council",
+    "All weapons must be peace-bonded while inside the town walls",
+    "Foreigners must register at the gatehouse and wear a visitor's token at all times",
+    "Theft is punished by public service — one month of labor per gold piece stolen",
+    "No building may be taller than the temple spire, by ancient decree",
+    "All disputes over land must be witnessed by at least three neutral parties",
+    "Street vendors must donate one-tenth of their daily earnings to the poor fund",
+    "Undead are forbidden within town limits, no exceptions for necromantic research",
+    "Anyone who kills a raven within town borders faces a heavy fine — they are sacred",
+    "Dueling is legal but must be supervised by a town guard and cannot be to the death",
+    "All taverns must close by midnight, by order of the town council",
+    "No one may claim ownership of the town's wells — they belong to all",
+    "Harboring a wanted criminal carries the same punishment as the criminal's crime",
+    "Fire magic is strictly regulated due to the Great Blaze three generations ago",
+    "All trade agreements with outsiders must be approved by the merchant guild"
+  ],
+
+  festivals: [
+    "The Harvest Moon Festival — three days of feasting, dancing, and thanksgiving",
+    "The Founders' Day parade with floats depicting the town's history",
+    "The Lantern Night where thousands of paper lanterns float down the river",
+    "The Spring Awakening where townsfolk plant the first seeds of the season together",
+    "The Goblin Market — a night bazaar where vendors sell curiosities and oddities",
+    "The Tournament of Stars — competitions of skill held under the autumn sky",
+    "The Remembrance Vigil honoring those lost in the last great conflict",
+    "The Fool's Court where social roles are reversed for one chaotic day",
+    "The Midsummer Bonfire where the entire town gathers on the hilltop",
+    "The Brewers' Competition where local taverns compete for the Golden Tankard",
+    "The Ghost Walk — a nighttime tour of haunted locations told by storytellers",
+    "The Trade Fair that draws merchants from across the region for a full week",
+    "The Children's Masquerade where young ones parade in homemade costumes",
+    "The Blessing of the Waters where the local priest consecrates the town spring",
+    "The Night of a Thousand Songs — bards gather for an all-night musical celebration"
+  ],
+
+  markets: [
+    "A bustling open-air market in the town square, busy every morning with fresh goods",
+    "A covered bazaar with permanent stalls, each family holding their spot for generations",
+    "A weekly market day draws farmers and crafters from outlying villages",
+    "A specialized market known throughout the region for its rare herbs and alchemical ingredients",
+    "A modest trading post where locals barter more often than they use coin",
+    "A floating market on barges and river boats, goods changing hands over the water",
+    "A night market that only operates after sundown, lit by magical lanterns",
+    "A grand merchant hall where trade contracts are negotiated behind closed doors",
+    "An auction house where rare items and magical curiosities are sold to the highest bidder",
+    "A simple crossroads market where traveling merchants stop to resupply and sell wares",
+    "A dwarven-built underground market carved into the hillside, cool in summer and warm in winter",
+    "A chaotic flea market where anything and everything can be found — if you look hard enough",
+    "A regulated guild market where only licensed merchants may sell within its walls",
+    "A seasonal fair that appears only during harvest time, tripling the town's population",
+    "A black market that operates in the back rooms of certain taverns, known only to locals"
+  ],
+
+  tradeRoutes: [
+    "A well-maintained road connects to the regional capital, carrying grain and taxes",
+    "River barges travel downstream weekly, carrying lumber and returning with manufactured goods",
+    "A mountain pass leads to a dwarven stronghold that trades metals for food and textiles",
+    "Caravans arrive monthly from the coast, bringing exotic spices, fish, and foreign news",
+    "An overland route through dangerous territory requires armed escorts for merchants",
+    "Trade ships dock at the settlement's modest pier, connecting it to distant port cities",
+    "A secret smuggler's route bypasses official tolls and tariffs through the forest",
+    "The settlement sits at a crossroads where three major trade routes converge",
+    "Pack mules carry goods over steep trails to a highland monastery that trades in rare herbs",
+    "An ancient underground road connects to a neighboring settlement, usable even in winter",
+    "Elven traders arrive each equinox, exchanging masterwork goods for mundane supplies",
+    "A relay system of riders carries mail and small goods between settlements within days",
+    "A magical portal reduces a month's journey to a single step — but its use is expensive",
+    "Nomadic herders pass through seasonally, trading leather, meat, and stories",
+    "A canal system allows small boats to move goods between the river and inland farms"
+  ],
+
+  notableBuildings: [
+    "The Gilded Goose Inn — a three-story establishment with rooms for every budget",
+    "The Old Mill — still grinding grain after two centuries, a symbol of the town's endurance",
+    "The Council Hall — an imposing stone building where public business is conducted",
+    "The Arcanist's Tower — home to the local wizard, who offers services for a price",
+    "The Ironforge Smithy — known across the region for quality weapons and tools",
+    "The Whispering Library — a modest but well-curated collection of books and scrolls",
+    "The Healing House — run by priests who treat the sick and injured regardless of wealth",
+    "The Garrison Keep — a fortified barracks housing the town guard and their armory",
+    "The Merchant's Guildhall — where trade disputes are settled and contracts are sealed",
+    "The Wayfarers' Rest — a public hostel for travelers who cannot afford an inn",
+    "The Stone Bridge — an architectural marvel spanning the river with elegant arches",
+    "The Clockwork Tower — a gnomish-designed marvel that chimes every hour",
+    "The Brewery — producing the settlement's famous ale, exported to neighboring regions",
+    "The Amphitheater — a semicircle of stone seats used for plays, trials, and assemblies",
+    "The Bathhouse — a popular social gathering spot with heated pools and steam rooms"
+  ],
+
+  infrastructure: [
+    "A stone aqueduct carries fresh water from mountain springs to public fountains",
+    "Cobblestone streets in the center give way to muddy roads in the outer districts",
+    "A functioning sewer system beneath the older districts, built by long-forgotten engineers",
+    "Wooden bridges connect buildings across narrow alleys in the densest neighborhoods",
+    "A watchtower network provides early warning and signal fires visible for miles",
+    "Street lanterns enchanted with continual flame provide light through the night",
+    "A sturdy stone wall encircles the old town, with three gated entrances",
+    "A system of rain barrels and cisterns collects water for dry seasons",
+    "Well-maintained roads with milestones connect the settlement to neighboring towns",
+    "A public well in each district ensures everyone has access to clean water",
+    "Covered storm drains channel rainwater away from buildings to prevent flooding",
+    "A granary stores surplus grain to protect against famine and siege",
+    "Hitching posts and stables at every major intersection accommodate mounted travelers",
+    "A drawbridge over the moat is the only entrance from the north road",
+    "A network of messenger posts allows quick communication within the settlement"
+  ],
+
+  temples: [
+    "A grand cathedral dedicated to the sun god, its stained glass windows casting rainbows at dawn",
+    "A modest shrine to a harvest deity, tended by a single aging priestess",
+    "A hidden temple to a forbidden god, accessible through a secret passage beneath a shop",
+    "An open-air sanctuary where druids conduct rituals under the ancient oak",
+    "A multi-faith chapel where shrines to several deities share one roof in harmony",
+    "A weathered stone temple whose original deity has been forgotten, now used by any who pray",
+    "A floating shrine on a raft in the river, honoring the water spirits",
+    "A fortress-like temple to a war god, where soldiers come to be blessed before battle",
+    "A serene monastery on the outskirts, known for its healing prayers and herbal remedies",
+    "A dark chapel to a trickster god, where thieves come to ask for luck",
+    "A newly built temple funded by a wealthy patron, gleaming with fresh paint and gold leaf",
+    "An underground crypt-temple where the dead are interred with sacred rites",
+    "A bell tower that rings daily, calling the faithful to morning and evening prayer",
+    "A sacred grove at the edge of town where nature spirits are said to dwell",
+    "A temple complex with training halls where clerics and paladins study together"
+  ],
+
+  guilds: [
+    "The Merchants' League — controls all major trade and sets prices in the market",
+    "The Artisans' Circle — ensures quality standards for all crafted goods in town",
+    "The Masons' Brotherhood — responsible for all construction and building maintenance",
+    "The Healers' Collective — provides medical care and trains new herbalists",
+    "The Brewers' Alliance — oversees taverns, brewing, and the annual competition",
+    "The Smiths' Hammers — master metalworkers who guard their trade secrets jealously",
+    "The Weavers' Guild — produces textiles and controls the cloth trade",
+    "The Farmers' Cooperative — negotiates prices and shares resources among local growers",
+    "The Couriers' Network — a guild of messengers and scouts known for speed and discretion",
+    "The Tinkers' Workshop — gnomish inventors and repairers who fix anything mechanical",
+    "The Scribes' Order — handles legal documents, letters, and record-keeping for the town",
+    "The Fishers' Brotherhood — manages fishing rights and maintains the docks",
+    "The Teamsters' Union — controls wagon transport and caravan logistics",
+    "The Lamplighters' Guild — maintains the street lights and patrols after dark",
+    "The Bakers' Consortium — supplies bread to the town and manages grain reserves"
+  ],
+
+  organizations: [
+    "The Town Watch — volunteers who supplement the official guard on night patrols",
+    "The Elders' Council — retired leaders who serve as advisors and mediators",
+    "The Explorers' Society — adventurers and scholars who map the surrounding wilderness",
+    "The Historical Preservation Society — maintains archives and protects ancient sites",
+    "The Charitable Hand — a group that feeds and shelters the town's poorest residents",
+    "The Veterans' Circle — retired soldiers who share stories and support one another",
+    "The Naturalists' League — druids and rangers who monitor the health of the local wilds",
+    "The Arcane Study Group — amateur mages who meet weekly to share knowledge",
+    "The Youth Brigade — young people trained in first aid, firefighting, and emergency response",
+    "The River Wardens — volunteers who maintain the waterways and rescue drowning swimmers",
+    "The Heritage Players — a theater troupe that performs legends and historical tales",
+    "The Garden Society — maintains public parks and grows medicinal herbs for the community",
+    "The Dawn Patrol — early risers who sweep the streets and report any overnight trouble",
+    "The Foreign Quarter Committee — immigrants who help newcomers settle and find work",
+    "The Traders' Arbitration Board — neutral mediators who resolve commercial disputes"
+  ],
+
+  criminalGroups: [
+    "The Rat Kings — a pickpocket ring run by street urchins with a mysterious adult handler",
+    "The Black Ledger — a smuggling operation that moves contraband through the sewers",
+    "The Velvet Masks — an extortion ring that targets wealthy merchants for protection money",
+    "The Whisperers — information brokers who sell secrets to the highest bidder",
+    "The Night Hands — burglars who target only the homes of corrupt officials",
+    "A lone fence who operates from the back of a legitimate antique shop",
+    "The Dock Rats — thugs who control the waterfront and tax unofficial cargo",
+    "The Gilded Serpent — a gambling den that also serves as a front for loan sharking",
+    "The Ashwalkers — arsonists for hire who disguise their work as accidents",
+    "A rogue alchemist who sells forbidden potions and poisons from a hidden laboratory",
+    "The Hollow Crown — a shadow council that manipulates town politics from behind the scenes",
+    "The Gravediggers — a body-snatching ring that sells corpses to a nearby necromancer",
+    "The Silent Sisters — female assassins who pose as traveling nuns",
+    "A corrupt guard captain who takes bribes and looks the other way for a price",
+    "The Red Market — dealers in stolen magical items who operate during festival crowds"
+  ],
+
+  npcNames: [
+    "Aldric Thornton", "Mira Goldleaf", "Bjorn Ironfist", "Seraphina Vale",
+    "Garrett Copperhands", "Elara Moonshadow", "Torben Ashwick", "Yseult Ravenglass",
+    "Fenwick Bramble", "Nadia Steelborn", "Corwin Duskwalker", "Petra Stonemill",
+    "Jasper Windhollow", "Linnea Brightwater", "Rodrik Coalvein", "Thessa Nightbloom",
+    "Hadrian Foxglove", "Isolde Wintermere", "Cyrus Blackthorn", "Wren Ashbury"
+  ],
+
+  npcRoles: [
+    "Innkeeper and rumor collector",
+    "Town healer and herbalist",
+    "Blacksmith and weapon merchant",
+    "Guild master and political schemer",
+    "Temple priest and moral authority",
+    "Guard captain and veteran soldier",
+    "Market vendor and gossip enthusiast",
+    "Retired adventurer and storyteller",
+    "Scholar and keeper of forbidden knowledge",
+    "Fisher and keeper of river secrets",
+    "Mysterious fortune teller and seer",
+    "Traveling merchant with exotic wares",
+    "Town drunk who knows everyone's secrets",
+    "Orphanage keeper and protector of children",
+    "Stable master and horse whisperer"
+  ],
+
+  npcDescs: [
+    "A gruff but good-hearted soul who would give their last coin to someone in need",
+    "Secretive and always glancing over their shoulder, as if being watched",
+    "Laughs too loudly and talks too much, but is surprisingly perceptive",
+    "Calm and measured in all things, never raising their voice even in crisis",
+    "Bitter about a past betrayal, slow to trust but fiercely loyal once won over",
+    "Cheerful and optimistic to a fault, convinced that everything will work out",
+    "Ancient and wise, speaks in riddles and proverbs that always prove relevant",
+    "Young and ambitious, eager to prove themselves worthy of their position",
+    "Haunted by something they saw during the war, prone to distant stares",
+    "Suspicious of outsiders but a fierce defender of the town and its people",
+    "A master of small talk who remembers everyone's name and birthday",
+    "Quiet and observant, speaks rarely but every word carries weight",
+    "Flamboyant and theatrical, turning even mundane tasks into performances",
+    "Deeply religious, sees every event as a sign from the gods",
+    "Pragmatic and unsentimental, judges everyone by their usefulness to the community"
+  ]
+};

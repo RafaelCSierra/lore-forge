@@ -1,0 +1,54 @@
+<section class="lore-forge-step" data-step="religion">
+  <h2>{{localize "LORE_FORGE.Settlement.Steps.Religion"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Settlement.Religion.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Temples --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Religion.Temples"}}</label>
+      <div class="inspiration-row">
+        <textarea name="temples" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Religion.TemplesPlaceholder'}}">{{data.temples}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="temples">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Guilds --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Religion.Guilds"}}</label>
+      <div class="inspiration-row">
+        <textarea name="guilds" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Religion.GuildsPlaceholder'}}">{{data.guilds}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="guilds">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Organizations --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Religion.Organizations"}}</label>
+      <div class="inspiration-row">
+        <textarea name="organizations" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Religion.OrganizationsPlaceholder'}}">{{data.organizations}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="organizations">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Criminal Groups --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Religion.CriminalGroups"}}</label>
+      <div class="inspiration-row">
+        <textarea name="criminalGroups" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Religion.CriminalGroupsPlaceholder'}}">{{data.criminalGroups}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="criminalGroups">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

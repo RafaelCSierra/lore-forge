@@ -1,0 +1,42 @@
+<section class="lore-forge-step" data-step="personality">
+  <h2>{{localize "LORE_FORGE.Character.Steps.Personality"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Character.Personality.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Personality Traits --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Personality.Traits"}}</label>
+      <div class="inspiration-row">
+        <textarea name="traits" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Character.Personality.TraitsPlaceholder'}}">{{data.traits}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="traits">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Mannerisms --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Personality.Mannerisms"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="mannerisms" value="{{data.mannerisms}}"
+               placeholder="{{localize 'LORE_FORGE.Character.Personality.MannerismsPlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="mannerisms">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Voice --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Personality.Voice"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="voice" value="{{data.voice}}"
+               placeholder="{{localize 'LORE_FORGE.Character.Personality.VoicePlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="voices">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

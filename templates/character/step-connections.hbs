@@ -1,0 +1,174 @@
+<section class="lore-forge-step" data-step="connections">
+  <h2>{{localize "LORE_FORGE.Character.Steps.Connections"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Character.Connections.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Placement --}}
+    <div class="lf-entry-block">
+      <h4><i class="fas fa-map-marker-alt"></i> {{localize "LORE_FORGE.Common.Placement"}}</h4>
+
+      {{!-- Kingdom / Region --}}
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Common.Region"}}</label>
+        <select name="regionId" data-cascade="settlementId,locationId">
+          <option value="">{{localize "LORE_FORGE.Common.RegionNone"}}</option>
+          {{#each regions}}
+          <option value="{{this.id}}" {{#if (eq ../data.regionId this.id)}}selected{{/if}}>
+            {{this.name}}
+          </option>
+          {{/each}}
+        </select>
+      </div>
+
+      {{!-- Settlement (filtered by kingdom) --}}
+      {{#if settlements.length}}
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Common.Settlement"}}</label>
+        <select name="settlementId" data-cascade="locationId">
+          <option value="">{{localize "LORE_FORGE.Common.SettlementNone"}}</option>
+          {{#each settlements}}
+          <option value="{{this.id}}" {{#if (eq ../data.settlementId this.id)}}selected{{/if}}>
+            {{this.name}}
+          </option>
+          {{/each}}
+        </select>
+      </div>
+      {{/if}}
+
+      {{!-- Location (filtered by kingdom) --}}
+      {{#if locations.length}}
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Common.Location"}}</label>
+        <select name="locationId">
+          <option value="">{{localize "LORE_FORGE.Common.LocationNone"}}</option>
+          {{#each locations}}
+          <option value="{{this.id}}" {{#if (eq ../data.locationId this.id)}}selected{{/if}}>
+            {{this.name}}
+          </option>
+          {{/each}}
+        </select>
+      </div>
+      {{/if}}
+    </div>
+
+    {{!-- Relationship 1 --}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Character.Connections.RelationLabel"}} 1</h4>
+      <div class="lf-form-row">
+        <div class="form-group">
+          <label>{{localize "LORE_FORGE.Character.Connections.RelationName"}}</label>
+          <input type="text" name="relation1Name" value="{{data.relation1Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Character.Connections.RelationNamePlaceholder'}}">
+        </div>
+        <div class="form-group">
+          <label>{{localize "LORE_FORGE.Character.Connections.RelationType"}}</label>
+          <div class="inspiration-row">
+            <input type="text" name="relation1Type" value="{{data.relation1Type}}"
+                   placeholder="{{localize 'LORE_FORGE.Character.Connections.RelationTypePlaceholder'}}">
+            <button type="button" class="inspire-btn" data-action="inspire" data-field="relationTypes">
+              <i class="fas fa-dice-d20"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Character.Connections.RelationDesc"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="relation1Desc" value="{{data.relation1Desc}}"
+                 placeholder="{{localize 'LORE_FORGE.Character.Connections.RelationDescPlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="relationDescs">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Relationship 2 --}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Character.Connections.RelationLabel"}} 2</h4>
+      <div class="lf-form-row">
+        <div class="form-group">
+          <label>{{localize "LORE_FORGE.Character.Connections.RelationName"}}</label>
+          <input type="text" name="relation2Name" value="{{data.relation2Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Character.Connections.RelationNamePlaceholder'}}">
+        </div>
+        <div class="form-group">
+          <label>{{localize "LORE_FORGE.Character.Connections.RelationType"}}</label>
+          <div class="inspiration-row">
+            <input type="text" name="relation2Type" value="{{data.relation2Type}}"
+                   placeholder="{{localize 'LORE_FORGE.Character.Connections.RelationTypePlaceholder'}}">
+            <button type="button" class="inspire-btn" data-action="inspire" data-field="relationTypes">
+              <i class="fas fa-dice-d20"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Character.Connections.RelationDesc"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="relation2Desc" value="{{data.relation2Desc}}"
+                 placeholder="{{localize 'LORE_FORGE.Character.Connections.RelationDescPlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="relationDescs">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Relationship 3 --}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Character.Connections.RelationLabel"}} 3</h4>
+      <div class="lf-form-row">
+        <div class="form-group">
+          <label>{{localize "LORE_FORGE.Character.Connections.RelationName"}}</label>
+          <input type="text" name="relation3Name" value="{{data.relation3Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Character.Connections.RelationNamePlaceholder'}}">
+        </div>
+        <div class="form-group">
+          <label>{{localize "LORE_FORGE.Character.Connections.RelationType"}}</label>
+          <div class="inspiration-row">
+            <input type="text" name="relation3Type" value="{{data.relation3Type}}"
+                   placeholder="{{localize 'LORE_FORGE.Character.Connections.RelationTypePlaceholder'}}">
+            <button type="button" class="inspire-btn" data-action="inspire" data-field="relationTypes">
+              <i class="fas fa-dice-d20"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Character.Connections.RelationDesc"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="relation3Desc" value="{{data.relation3Desc}}"
+                 placeholder="{{localize 'LORE_FORGE.Character.Connections.RelationDescPlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="relationDescs">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Narrative Arc --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Connections.NarrativeArc"}}</label>
+      <div class="inspiration-row">
+        <textarea name="narrativeArc" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Connections.NarrativeArcPlaceholder'}}">{{data.narrativeArc}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="narrativeArcs">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Plot Hooks --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Connections.PlotHooks"}}</label>
+      <div class="inspiration-row">
+        <textarea name="plotHooks" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Connections.PlotHooksPlaceholder'}}">{{data.plotHooks}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="plotHooks">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

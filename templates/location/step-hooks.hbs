@@ -1,0 +1,42 @@
+<section class="lore-forge-step" data-step="hooks">
+  <h2>{{localize "LORE_FORGE.Location.Steps.Hooks"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Location.Hooks.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Rumors --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Hooks.Rumors"}}</label>
+      <div class="inspiration-row">
+        <textarea name="rumors" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Location.Hooks.RumorsPlaceholder'}}">{{data.rumors}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="rumors">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Secrets --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Hooks.Secrets"}}</label>
+      <div class="inspiration-row">
+        <textarea name="secrets" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Location.Hooks.SecretsPlaceholder'}}">{{data.secrets}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="secrets">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Plot Hooks --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Location.Hooks.PlotHooks"}}</label>
+      <div class="inspiration-row">
+        <textarea name="plotHooks" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Location.Hooks.PlotHooksPlaceholder'}}">{{data.plotHooks}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="plotHooks">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

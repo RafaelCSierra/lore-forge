@@ -1,0 +1,275 @@
+<section class="lore-forge-step" data-step="review">
+  <h2>{{localize "LORE_FORGE.Character.Steps.Review"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Character.Review.Desc"}}</p>
+
+  <div class="lf-review-preview">
+    {{!-- Header with name + badges --}}
+    <div class="lf-review-header">
+      <h3><i class="fas fa-user-pen"></i> {{fullName}}</h3>
+      <div class="lf-review-badges">
+        {{#if cultureLabel}}
+        <span class="lf-badge lf-badge-culture">{{cultureLabel}}</span>
+        {{/if}}
+        {{#if subCultureLabel}}
+        <span class="lf-badge lf-badge-subculture">{{subCultureLabel}}</span>
+        {{/if}}
+
+        {{#if narrativeRoleLabel}}
+        <span class="lf-badge lf-badge-role">{{narrativeRoleLabel}}</span>
+        {{/if}}
+      </div>
+    </div>
+
+    {{!-- Placement --}}
+    {{#if regionName}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Common.Region"}}:</span>
+      {{regionName}}
+    </div>
+    {{/if}}
+    {{#if settlementName}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Common.Settlement"}}:</span>
+      {{settlementName}}
+    </div>
+    {{/if}}
+    {{#if locationName}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Common.Location"}}:</span>
+      {{locationName}}
+    </div>
+    {{/if}}
+
+    {{!-- Appearance --}}
+    {{#if hasAppearance}}
+    <div class="lf-review-section">
+      <h4><i class="fas fa-eye"></i> {{localize "LORE_FORGE.Character.Review.Appearance"}}</h4>
+      {{#if data.physicalDesc}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.PhysicalDesc"}}:</span>
+        {{data.physicalDesc}}
+      </div>
+      {{/if}}
+      {{#if data.height}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.Height"}}:</span>
+        {{data.height}}
+      </div>
+      {{/if}}
+      {{#if data.build}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.Build"}}:</span>
+        {{data.build}}
+      </div>
+      {{/if}}
+      {{#if data.hairAndEyes}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.HairAndEyes"}}:</span>
+        {{data.hairAndEyes}}
+      </div>
+      {{/if}}
+      {{#if data.distinguishingMarks}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.DistinguishingMarks"}}:</span>
+        {{data.distinguishingMarks}}
+      </div>
+      {{/if}}
+      {{#if data.clothingStyle}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.ClothingStyle"}}:</span>
+        {{data.clothingStyle}}
+      </div>
+      {{/if}}
+    </div>
+    {{/if}}
+
+    {{!-- Personality --}}
+    {{#if hasPersonality}}
+    <div class="lf-review-section">
+      <h4><i class="fas fa-theater-masks"></i> {{localize "LORE_FORGE.Character.Review.Personality"}}</h4>
+      {{#if data.traits}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.Traits"}}:</span>
+        {{data.traits}}
+      </div>
+      {{/if}}
+      {{#if data.mannerisms}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.Mannerisms"}}:</span>
+        {{data.mannerisms}}
+      </div>
+      {{/if}}
+      {{#if data.voice}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.Voice"}}:</span>
+        {{data.voice}}
+      </div>
+      {{/if}}
+    </div>
+    {{/if}}
+
+    {{!-- Abilities & Combat --}}
+    {{#if hasAbilities}}
+    <div class="lf-review-section">
+      <h4><i class="fas fa-shield-halved"></i> {{localize "LORE_FORGE.Character.Review.Abilities"}}</h4>
+      {{#if data.combatStyle}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.CombatStyle"}}:</span>
+        {{data.combatStyle}}
+      </div>
+      {{/if}}
+      {{#if data.magicalAbilities}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.MagicalAbilities"}}:</span>
+        {{data.magicalAbilities}}
+      </div>
+      {{/if}}
+      {{#if data.notableSkills}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.NotableSkills"}}:</span>
+        {{data.notableSkills}}
+      </div>
+      {{/if}}
+      {{#if data.weaknesses}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.Weaknesses"}}:</span>
+        {{data.weaknesses}}
+      </div>
+      {{/if}}
+    </div>
+    {{/if}}
+
+    {{!-- Occupation & Routine --}}
+    {{#if hasOccupation}}
+    <div class="lf-review-section">
+      <h4><i class="fas fa-briefcase"></i> {{localize "LORE_FORGE.Character.Review.Occupation"}}</h4>
+      {{#if data.profession}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.Profession"}}:</span>
+        {{data.profession}}
+      </div>
+      {{/if}}
+      {{#if data.dailyRoutine}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.DailyRoutine"}}:</span>
+        {{data.dailyRoutine}}
+      </div>
+      {{/if}}
+      {{#if data.workplace}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.Workplace"}}:</span>
+        {{data.workplace}}
+      </div>
+      {{/if}}
+      {{#if data.keyPossessions}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.KeyPossessions"}}:</span>
+        {{data.keyPossessions}}
+      </div>
+      {{/if}}
+    </div>
+    {{/if}}
+
+    {{!-- Background --}}
+    {{#if hasBackground}}
+    <div class="lf-review-section">
+      <h4><i class="fas fa-scroll"></i> {{localize "LORE_FORGE.Character.Review.Background"}}</h4>
+      {{#if data.backstory}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.Backstory"}}:</span>
+        {{data.backstory}}
+      </div>
+      {{/if}}
+      {{#if data.motivation}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.Motivation"}}:</span>
+        {{data.motivation}}
+      </div>
+      {{/if}}
+      {{#if data.secret}}
+      <div class="lf-field lf-field-secret">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.Secret"}}:</span>
+        {{data.secret}}
+      </div>
+      {{/if}}
+      {{#if data.fears}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.Fears"}}:</span>
+        {{data.fears}}
+      </div>
+      {{/if}}
+    </div>
+    {{/if}}
+
+    {{!-- Goals & Conflicts --}}
+    {{#if hasGoals}}
+    <div class="lf-review-section">
+      <h4><i class="fas fa-bullseye"></i> {{localize "LORE_FORGE.Character.Review.Goals"}}</h4>
+      {{#if data.shortTermGoals}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.ShortTermGoals"}}:</span>
+        {{data.shortTermGoals}}
+      </div>
+      {{/if}}
+      {{#if data.longTermGoals}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.LongTermGoals"}}:</span>
+        {{data.longTermGoals}}
+      </div>
+      {{/if}}
+      {{#if data.moralDilemmas}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.MoralDilemmas"}}:</span>
+        {{data.moralDilemmas}}
+      </div>
+      {{/if}}
+      {{#if data.internalConflicts}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.InternalConflicts"}}:</span>
+        {{data.internalConflicts}}
+      </div>
+      {{/if}}
+    </div>
+    {{/if}}
+
+    {{!-- Connections --}}
+    {{#if hasConnections}}
+    <div class="lf-review-section">
+      <h4><i class="fas fa-link"></i> {{localize "LORE_FORGE.Character.Review.Connections"}}</h4>
+      {{#if data.relation1Name}}
+      <div class="lf-review-relation">
+        <strong>{{data.relation1Name}}</strong>
+        {{#if data.relation1Type}}<span class="lf-relation-type"> ({{data.relation1Type}})</span>{{/if}}
+        {{#if data.relation1Desc}}<br>{{data.relation1Desc}}{{/if}}
+      </div>
+      {{/if}}
+      {{#if data.relation2Name}}
+      <div class="lf-review-relation">
+        <strong>{{data.relation2Name}}</strong>
+        {{#if data.relation2Type}}<span class="lf-relation-type"> ({{data.relation2Type}})</span>{{/if}}
+        {{#if data.relation2Desc}}<br>{{data.relation2Desc}}{{/if}}
+      </div>
+      {{/if}}
+      {{#if data.relation3Name}}
+      <div class="lf-review-relation">
+        <strong>{{data.relation3Name}}</strong>
+        {{#if data.relation3Type}}<span class="lf-relation-type"> ({{data.relation3Type}})</span>{{/if}}
+        {{#if data.relation3Desc}}<br>{{data.relation3Desc}}{{/if}}
+      </div>
+      {{/if}}
+      {{#if data.narrativeArc}}
+      <div class="lf-field" style="margin-top:8px;">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.NarrativeArc"}}:</span>
+        {{data.narrativeArc}}
+      </div>
+      {{/if}}
+      {{#if data.plotHooks}}
+      <div class="lf-field">
+        <span class="lf-field-label">{{localize "LORE_FORGE.Character.Review.PlotHooks"}}:</span>
+        {{data.plotHooks}}
+      </div>
+      {{/if}}
+    </div>
+    {{/if}}
+  </div>
+</section>

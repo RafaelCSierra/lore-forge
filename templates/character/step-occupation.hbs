@@ -1,0 +1,54 @@
+<section class="lore-forge-step" data-step="occupation">
+  <h2>{{localize "LORE_FORGE.Character.Steps.Occupation"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Character.Occupation.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Profession --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Occupation.Profession"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="profession" value="{{data.profession}}"
+               placeholder="{{localize 'LORE_FORGE.Character.Occupation.ProfessionPlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="professions">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Daily Routine --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Occupation.DailyRoutine"}}</label>
+      <div class="inspiration-row">
+        <textarea name="dailyRoutine" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Occupation.DailyRoutinePlaceholder'}}">{{data.dailyRoutine}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="dailyRoutines">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Workplace --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Occupation.Workplace"}}</label>
+      <div class="inspiration-row">
+        <input type="text" name="workplace" value="{{data.workplace}}"
+               placeholder="{{localize 'LORE_FORGE.Character.Occupation.WorkplacePlaceholder'}}">
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="workplaces">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Key Possessions --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Character.Occupation.KeyPossessions"}}</label>
+      <div class="inspiration-row">
+        <textarea name="keyPossessions" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Character.Occupation.KeyPossessionsPlaceholder'}}">{{data.keyPossessions}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="keyPossessions">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
