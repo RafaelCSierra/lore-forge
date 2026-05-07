@@ -12,3 +12,8 @@ desktop.ini
 *~
 .vscode/
 .idea/
+
+# Build / artefatos locais
+*.zip
+node_modules/
+dist/
