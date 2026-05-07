@@ -28,12 +28,6 @@
       {{data.landmarks}}
     </div>
     {{/if}}
-    {{#if data.resources}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.Resources"}}:</span>
-      {{data.resources}}
-    </div>
-    {{/if}}
 
     {{!-- Government --}}
     <h4><i class="fas fa-landmark"></i> {{localize "LORE_FORGE.Kingdom.Review.Government"}}</h4>
@@ -53,49 +47,14 @@
       {{data.culture}}
     </div>
     {{/if}}
-    {{#if data.socialStructure}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.SocialStructure"}}:</span>
-      {{data.socialStructure}}
-    </div>
-    {{/if}}
 
-    {{!-- History --}}
+    {{!-- History & Economy --}}
     {{#if hasHistory}}
     <h4><i class="fas fa-book-open"></i> {{localize "LORE_FORGE.Kingdom.Review.History"}}</h4>
     {{#if data.foundingStory}}
     <div class="lf-field">
       <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.FoundingStory"}}:</span>
       {{data.foundingStory}}
-    </div>
-    {{/if}}
-    {{#if data.historicalEvents}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.HistoricalEvents"}}:</span>
-      {{data.historicalEvents}}
-    </div>
-    {{/if}}
-    {{#if data.legends}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.Legends"}}:</span>
-      {{data.legends}}
-    </div>
-    {{/if}}
-    {{#if data.historicalFigures}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.HistoricalFigures"}}:</span>
-      {{data.historicalFigures}}
-    </div>
-    {{/if}}
-    {{/if}}
-
-    {{!-- Economy --}}
-    {{#if hasEconomy}}
-    <h4><i class="fas fa-coins"></i> {{localize "LORE_FORGE.Kingdom.Review.Economy"}}</h4>
-    {{#if data.currency}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.Currency"}}:</span>
-      {{data.currency}}
     </div>
     {{/if}}
     <div class="lf-field">
@@ -108,33 +67,21 @@
       {{data.industries}}
     </div>
     {{/if}}
-    {{#if data.tradeRoutes}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.TradeRoutes"}}:</span>
-      {{data.tradeRoutes}}
-    </div>
-    {{/if}}
     {{/if}}
 
-    {{!-- Military --}}
-    {{#if hasMilitary}}
-    <h4><i class="fas fa-shield-halved"></i> {{localize "LORE_FORGE.Kingdom.Review.Military"}}</h4>
-    {{#if data.militaryForces}}
+    {{!-- Conflicts & Faith --}}
+    {{#if hasConflicts}}
+    <h4><i class="fas fa-shield-halved"></i> {{localize "LORE_FORGE.Kingdom.Review.Conflicts"}}</h4>
+    {{#if data.religion}}
     <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.MilitaryForces"}}:</span>
-      {{data.militaryForces}}
+      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.Religion"}}:</span>
+      {{data.religion}}
     </div>
     {{/if}}
-    {{#if data.fortifications}}
+    {{#if data.faction1Name}}
     <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.Fortifications"}}:</span>
-      {{data.fortifications}}
-    </div>
-    {{/if}}
-    {{#if data.militaryTraditions}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.MilitaryTraditions"}}:</span>
-      {{data.militaryTraditions}}
+      <span class="lf-field-label">{{data.faction1Name}}:</span>
+      {{data.faction1Goals}}
     </div>
     {{/if}}
     {{#if data.externalThreats}}
@@ -143,80 +90,10 @@
       {{data.externalThreats}}
     </div>
     {{/if}}
-    {{/if}}
-
-    {{!-- Magic & Faith --}}
-    {{#if hasMagic}}
-    <h4><i class="fas fa-hat-wizard"></i> {{localize "LORE_FORGE.Kingdom.Review.Magic"}}</h4>
-    {{#if data.religion}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.Religion"}}:</span>
-      {{data.religion}}
-    </div>
-    {{/if}}
-    {{#if data.pantheon}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.Pantheon"}}:</span>
-      {{data.pantheon}}
-    </div>
-    {{/if}}
-    {{#if data.religiousOrders}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.ReligiousOrders"}}:</span>
-      {{data.religiousOrders}}
-    </div>
-    {{/if}}
-    {{#if data.magicalInstitutions}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.MagicalInstitutions"}}:</span>
-      {{data.magicalInstitutions}}
-    </div>
-    {{/if}}
-    {{#if data.arcaneLaws}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.ArcaneLaws"}}:</span>
-      {{data.arcaneLaws}}
-    </div>
-    {{/if}}
-    {{/if}}
-
-    {{!-- Factions --}}
-    {{#if hasFactions}}
-    <h4><i class="fas fa-users"></i> {{localize "LORE_FORGE.Kingdom.Review.Factions"}}</h4>
-    {{#if data.faction1Name}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{data.faction1Name}}:</span>
-      {{data.faction1Goals}}
-    </div>
-    {{/if}}
-    {{#if data.faction2Name}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{data.faction2Name}}:</span>
-      {{data.faction2Goals}}
-    </div>
-    {{/if}}
-    {{#if data.faction3Name}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{data.faction3Name}}:</span>
-      {{data.faction3Goals}}
-    </div>
-    {{/if}}
     {{#if data.internalConflicts}}
     <div class="lf-field">
       <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.InternalConflicts"}}:</span>
       {{data.internalConflicts}}
-    </div>
-    {{/if}}
-    {{#if data.externalConflicts}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.ExternalConflicts"}}:</span>
-      {{data.externalConflicts}}
-    </div>
-    {{/if}}
-    {{#if data.alliances}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Kingdom.Review.Alliances"}}:</span>
-      {{data.alliances}}
     </div>
     {{/if}}
     {{/if}}

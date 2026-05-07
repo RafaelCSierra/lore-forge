@@ -41,7 +41,7 @@ const POPULATION_OPTIONS = [
 
 const MAX_DISTRICTS = 5;
 
-const STEPS = ["identity", "geography", "history", "trade", "religion", "npcs", "hooks", "review"];
+const STEPS = ["identity", "geography", "life", "influence", "review"];
 
 export { SETTLEMENT_SIZES };
 
@@ -56,6 +56,7 @@ export default class SettlementWizard extends LoreForgeWizard {
       population: "",
       leaderName: "",
       leaderDesc: "",
+      founding: "",
       district1Name: "",
       district1Desc: "",
       district2Name: "",
@@ -68,29 +69,15 @@ export default class SettlementWizard extends LoreForgeWizard {
       district5Desc: "",
       landmarks: "",
       defenses: "",
-      founding: "",
+      economy: "",
       customs: "",
-      localLaws: "",
-      festivals: "",
-      market: "",
-      settlTradeRoutes: "",
-      notableBuildings: "",
-      infrastructure: "",
-      temples: "",
-      guilds: "",
       organizations: "",
-      criminalGroups: "",
       npc1Name: "",
       npc1Role: "",
       npc1Desc: "",
       npc2Name: "",
       npc2Role: "",
       npc2Desc: "",
-      npc3Name: "",
-      npc3Role: "",
-      npc3Desc: "",
-      economy: "",
-      culture: "",
       rumors: "",
       plotHooks: ""
     };
@@ -109,11 +96,8 @@ export default class SettlementWizard extends LoreForgeWizard {
     return [
       "LORE_FORGE.Settlement.Steps.Identity",
       "LORE_FORGE.Settlement.Steps.Geography",
-      "LORE_FORGE.Settlement.Steps.History",
-      "LORE_FORGE.Settlement.Steps.Trade",
-      "LORE_FORGE.Settlement.Steps.Religion",
-      "LORE_FORGE.Settlement.Steps.NPCs",
-      "LORE_FORGE.Settlement.Steps.Hooks",
+      "LORE_FORGE.Settlement.Steps.Life",
+      "LORE_FORGE.Settlement.Steps.Influence",
       "LORE_FORGE.Settlement.Steps.Review"
     ];
   }
@@ -122,11 +106,8 @@ export default class SettlementWizard extends LoreForgeWizard {
     return [
       "modules/lore-forge/templates/settlement/step-identity.hbs",
       "modules/lore-forge/templates/settlement/step-geography.hbs",
-      "modules/lore-forge/templates/settlement/step-history.hbs",
-      "modules/lore-forge/templates/settlement/step-trade.hbs",
-      "modules/lore-forge/templates/settlement/step-religion.hbs",
-      "modules/lore-forge/templates/settlement/step-npcs.hbs",
-      "modules/lore-forge/templates/settlement/step-hooks.hbs",
+      "modules/lore-forge/templates/settlement/step-life.hbs",
+      "modules/lore-forge/templates/settlement/step-influence.hbs",
       "modules/lore-forge/templates/settlement/step-review.hbs"
     ];
   }
@@ -138,7 +119,6 @@ export default class SettlementWizard extends LoreForgeWizard {
     const size = this._data.settlementSize;
     const maxDistricts = DISTRICTS_PER_SIZE[size] ?? 1;
 
-    // Collect filled districts (up to maxDistricts) for the review
     const districts = [];
     for (let i = 1; i <= maxDistricts; i++) {
       if (this._data[`district${i}Name`]) {
@@ -172,16 +152,13 @@ export default class SettlementWizard extends LoreForgeWizard {
       settlementSizeLabel: this._getLabel(SETTLEMENT_SIZES, size),
       districts,
       hasGeography: !!(districts.length > 0 || this._data.landmarks || this._data.defenses),
-      hasHistory: !!(this._data.founding || this._data.customs || this._data.localLaws || this._data.festivals),
-      hasTrade: !!(this._data.market || this._data.settlTradeRoutes || this._data.notableBuildings || this._data.infrastructure),
-      hasReligion: !!(this._data.temples || this._data.guilds || this._data.organizations || this._data.criminalGroups),
-      hasNPCs: !!(this._data.npc1Name || this._data.npc2Name || this._data.npc3Name),
+      hasLife: !!(this._data.economy || this._data.customs),
+      hasInfluence: !!(this._data.organizations || this._data.npc1Name || this._data.npc2Name ||
+                       this._data.rumors || this._data.plotHooks),
       npcs: [
         { name: this._data.npc1Name, role: this._data.npc1Role, desc: this._data.npc1Desc },
-        { name: this._data.npc2Name, role: this._data.npc2Role, desc: this._data.npc2Desc },
-        { name: this._data.npc3Name, role: this._data.npc3Role, desc: this._data.npc3Desc }
-      ].filter(n => n.name),
-      hasSociety: !!(this._data.economy || this._data.culture || this._data.rumors || this._data.plotHooks)
+        { name: this._data.npc2Name, role: this._data.npc2Role, desc: this._data.npc2Desc }
+      ].filter(n => n.name)
     };
   }
 

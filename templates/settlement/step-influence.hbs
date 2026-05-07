@@ -1,8 +1,20 @@
-<section class="lore-forge-step" data-step="npcs">
-  <h2>{{localize "LORE_FORGE.Settlement.Steps.NPCs"}}</h2>
-  <p class="step-description">{{localize "LORE_FORGE.Settlement.NPCs.Desc"}}</p>
+<section class="lore-forge-step" data-step="influence">
+  <h2>{{localize "LORE_FORGE.Settlement.Steps.Influence"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Settlement.Influence.Desc"}}</p>
 
   <div class="lf-form">
+    {{!-- Organizations / Influences --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Influence.Organizations"}}</label>
+      <div class="inspiration-row">
+        <textarea name="organizations" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Influence.OrganizationsPlaceholder'}}">{{data.organizations}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="organizations">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
     {{!-- NPC 1 --}}
     <div class="lf-entry-block">
       <h4>{{localize "LORE_FORGE.Settlement.NPCs.NPCLabel"}} 1</h4>
@@ -73,38 +85,27 @@
       </div>
     </div>
 
-    {{!-- NPC 3 --}}
-    <div class="lf-entry-block">
-      <h4>{{localize "LORE_FORGE.Settlement.NPCs.NPCLabel"}} 3</h4>
-      <div class="form-group">
-        <label>{{localize "LORE_FORGE.Settlement.NPCs.NPCName"}}</label>
-        <div class="inspiration-row">
-          <input type="text" name="npc3Name" value="{{data.npc3Name}}"
-                 placeholder="{{localize 'LORE_FORGE.Settlement.NPCs.NPCNamePlaceholder'}}">
-          <button type="button" class="inspire-btn" data-action="inspire" data-field="npcNames">
-            <i class="fas fa-dice-d20"></i>
-          </button>
-        </div>
+    {{!-- Rumors --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Hooks.Rumors"}}</label>
+      <div class="inspiration-row">
+        <textarea name="rumors" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Hooks.RumorsPlaceholder'}}">{{data.rumors}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="rumors">
+          <i class="fas fa-dice-d20"></i>
+        </button>
       </div>
-      <div class="form-group">
-        <label>{{localize "LORE_FORGE.Settlement.NPCs.NPCRole"}}</label>
-        <div class="inspiration-row">
-          <input type="text" name="npc3Role" value="{{data.npc3Role}}"
-                 placeholder="{{localize 'LORE_FORGE.Settlement.NPCs.NPCRolePlaceholder'}}">
-          <button type="button" class="inspire-btn" data-action="inspire" data-field="npcRoles">
-            <i class="fas fa-dice-d20"></i>
-          </button>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>{{localize "LORE_FORGE.Settlement.NPCs.NPCDesc"}}</label>
-        <div class="inspiration-row">
-          <textarea name="npc3Desc" rows="2"
-                    placeholder="{{localize 'LORE_FORGE.Settlement.NPCs.NPCDescPlaceholder'}}">{{data.npc3Desc}}</textarea>
-          <button type="button" class="inspire-btn" data-action="inspire" data-field="npcDescs">
-            <i class="fas fa-dice-d20"></i>
-          </button>
-        </div>
+    </div>
+
+    {{!-- Plot Hooks --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Hooks.PlotHooks"}}</label>
+      <div class="inspiration-row">
+        <textarea name="plotHooks" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Hooks.PlotHooksPlaceholder'}}">{{data.plotHooks}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="plotHooks">
+          <i class="fas fa-dice-d20"></i>
+        </button>
       </div>
     </div>
   </div>

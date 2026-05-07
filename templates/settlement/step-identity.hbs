@@ -15,29 +15,31 @@
       </div>
     </div>
 
-    {{!-- Settlement Size --}}
-    <div class="form-group">
-      <label>{{localize "LORE_FORGE.Settlement.Identity.Size"}}</label>
-      <select name="settlementSize">
-        {{#each settlementSizes}}
-        <option value="{{this.value}}" {{#if (eq ../data.settlementSize this.value)}}selected{{/if}}>
-          {{localize this.label}}
-        </option>
-        {{/each}}
-      </select>
-    </div>
+    <div class="lf-form-row">
+      {{!-- Settlement Size --}}
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Settlement.Identity.Size"}}</label>
+        <select name="settlementSize">
+          {{#each settlementSizes}}
+          <option value="{{this.value}}" {{#if (eq ../data.settlementSize this.value)}}selected{{/if}}>
+            {{localize this.label}}
+          </option>
+          {{/each}}
+        </select>
+      </div>
 
-    {{!-- Region --}}
-    <div class="form-group">
-      <label>{{localize "LORE_FORGE.Common.Region"}}</label>
-      <select name="regionId">
-        <option value="">{{localize "LORE_FORGE.Common.RegionNone"}}</option>
-        {{#each regions}}
-        <option value="{{this.id}}" {{#if (eq ../data.regionId this.id)}}selected{{/if}}>
-          {{this.name}}
-        </option>
-        {{/each}}
-      </select>
+      {{!-- Region --}}
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Common.Region"}}</label>
+        <select name="regionId">
+          <option value="">{{localize "LORE_FORGE.Common.RegionNone"}}</option>
+          {{#each regions}}
+          <option value="{{this.id}}" {{#if (eq ../data.regionId this.id)}}selected{{/if}}>
+            {{this.name}}
+          </option>
+          {{/each}}
+        </select>
+      </div>
     </div>
 
     {{!-- Population (dropdown based on size) --}}
@@ -72,6 +74,18 @@
         <input type="text" name="leaderDesc" value="{{data.leaderDesc}}"
                placeholder="{{localize 'LORE_FORGE.Settlement.Identity.LeaderDescPlaceholder'}}">
         <button type="button" class="inspire-btn" data-action="inspire" data-field="leaderDescs">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Founding (short) --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.History.Founding"}}</label>
+      <div class="inspiration-row">
+        <textarea name="founding" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.History.FoundingPlaceholder'}}">{{data.founding}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="foundingStories">
           <i class="fas fa-dice-d20"></i>
         </button>
       </div>

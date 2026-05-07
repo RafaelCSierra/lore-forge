@@ -38,5 +38,43 @@
         </button>
       </div>
     </div>
+
+    <div class="lf-form-row">
+      {{!-- Terrain --}}
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Kingdom.Geography.Terrain"}}</label>
+        <select name="terrain">
+          {{#each terrains}}
+          <option value="{{this.value}}" {{#if (eq ../data.terrain this.value)}}selected{{/if}}>
+            {{localize this.label}}
+          </option>
+          {{/each}}
+        </select>
+      </div>
+
+      {{!-- Climate --}}
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Kingdom.Geography.Climate"}}</label>
+        <select name="climate">
+          {{#each climates}}
+          <option value="{{this.value}}" {{#if (eq ../data.climate this.value)}}selected{{/if}}>
+            {{localize this.label}}
+          </option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+
+    {{!-- Landmarks --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Geography.Landmarks"}}</label>
+      <div class="inspiration-row">
+        <textarea name="landmarks" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.Geography.LandmarksPlaceholder'}}">{{data.landmarks}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="landmarks">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
   </div>
 </section>

@@ -28,6 +28,12 @@
       {{data.leaderName}}{{#if data.leaderDesc}} — {{data.leaderDesc}}{{/if}}
     </div>
     {{/if}}
+    {{#if data.founding}}
+    <div class="lf-field">
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Founding"}}:</span>
+      {{data.founding}}
+    </div>
+    {{/if}}
 
     {{!-- Geography --}}
     {{#if hasGeography}}
@@ -52,13 +58,13 @@
     {{/if}}
     {{/if}}
 
-    {{!-- History & Laws --}}
-    {{#if hasHistory}}
-    <h4><i class="fas fa-book-open"></i> {{localize "LORE_FORGE.Settlement.Review.History"}}</h4>
-    {{#if data.founding}}
+    {{!-- Life & Trade --}}
+    {{#if hasLife}}
+    <h4><i class="fas fa-store"></i> {{localize "LORE_FORGE.Settlement.Review.Life"}}</h4>
+    {{#if data.economy}}
     <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Founding"}}:</span>
-      {{data.founding}}
+      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Economy"}}:</span>
+      {{data.economy}}
     </div>
     {{/if}}
     {{#if data.customs}}
@@ -67,104 +73,23 @@
       {{data.customs}}
     </div>
     {{/if}}
-    {{#if data.localLaws}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.LocalLaws"}}:</span>
-      {{data.localLaws}}
-    </div>
-    {{/if}}
-    {{#if data.festivals}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Festivals"}}:</span>
-      {{data.festivals}}
-    </div>
-    {{/if}}
     {{/if}}
 
-    {{!-- Trade & Buildings --}}
-    {{#if hasTrade}}
-    <h4><i class="fas fa-store"></i> {{localize "LORE_FORGE.Settlement.Review.Trade"}}</h4>
-    {{#if data.market}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Market"}}:</span>
-      {{data.market}}
-    </div>
-    {{/if}}
-    {{#if data.settlTradeRoutes}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.TradeRoutes"}}:</span>
-      {{data.settlTradeRoutes}}
-    </div>
-    {{/if}}
-    {{#if data.notableBuildings}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.NotableBuildings"}}:</span>
-      {{data.notableBuildings}}
-    </div>
-    {{/if}}
-    {{#if data.infrastructure}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Infrastructure"}}:</span>
-      {{data.infrastructure}}
-    </div>
-    {{/if}}
-    {{/if}}
-
-    {{!-- Religion & Guilds --}}
-    {{#if hasReligion}}
-    <h4><i class="fas fa-place-of-worship"></i> {{localize "LORE_FORGE.Settlement.Review.ReligionGuilds"}}</h4>
-    {{#if data.temples}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Temples"}}:</span>
-      {{data.temples}}
-    </div>
-    {{/if}}
-    {{#if data.guilds}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Guilds"}}:</span>
-      {{data.guilds}}
-    </div>
-    {{/if}}
+    {{!-- Influence & Hooks --}}
+    {{#if hasInfluence}}
+    <h4><i class="fas fa-users"></i> {{localize "LORE_FORGE.Settlement.Review.Influence"}}</h4>
     {{#if data.organizations}}
     <div class="lf-field">
       <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Organizations"}}:</span>
       {{data.organizations}}
     </div>
     {{/if}}
-    {{#if data.criminalGroups}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.CriminalGroups"}}:</span>
-      {{data.criminalGroups}}
-    </div>
-    {{/if}}
-    {{/if}}
-
-    {{!-- Notable NPCs --}}
-    {{#if hasNPCs}}
-    <h4><i class="fas fa-user-group"></i> {{localize "LORE_FORGE.Settlement.Review.NotableNPCs"}}</h4>
     {{#each npcs}}
     <div class="lf-field">
       <span class="lf-field-label">{{this.name}}:</span>
       {{this.role}}{{#if this.desc}} — {{this.desc}}{{/if}}
     </div>
     {{/each}}
-    {{/if}}
-
-    {{!-- Society --}}
-    {{#if hasSociety}}
-    <h4><i class="fas fa-users"></i> {{localize "LORE_FORGE.Settlement.Review.Society"}}</h4>
-    {{#if data.economy}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Economy"}}:</span>
-      {{data.economy}}
-    </div>
-    {{/if}}
-    {{#if data.culture}}
-    <div class="lf-field">
-      <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Culture"}}:</span>
-      {{data.culture}}
-    </div>
-    {{/if}}
     {{#if data.rumors}}
     <div class="lf-field">
       <span class="lf-field-label">{{localize "LORE_FORGE.Settlement.Review.Rumors"}}:</span>

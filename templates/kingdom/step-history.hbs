@@ -7,7 +7,7 @@
     <div class="form-group">
       <label>{{localize "LORE_FORGE.Kingdom.History.FoundingStory"}}</label>
       <div class="inspiration-row">
-        <textarea name="foundingStory" rows="3"
+        <textarea name="foundingStory" rows="4"
                   placeholder="{{localize 'LORE_FORGE.Kingdom.History.FoundingStoryPlaceholder'}}">{{data.foundingStory}}</textarea>
         <button type="button" class="inspire-btn" data-action="inspire" data-field="foundingStories">
           <i class="fas fa-dice-d20"></i>
@@ -15,37 +15,25 @@
       </div>
     </div>
 
-    {{!-- Historical Events --}}
+    {{!-- Wealth Level --}}
     <div class="form-group">
-      <label>{{localize "LORE_FORGE.Kingdom.History.HistoricalEvents"}}</label>
-      <div class="inspiration-row">
-        <textarea name="historicalEvents" rows="3"
-                  placeholder="{{localize 'LORE_FORGE.Kingdom.History.HistoricalEventsPlaceholder'}}">{{data.historicalEvents}}</textarea>
-        <button type="button" class="inspire-btn" data-action="inspire" data-field="historicalEvents">
-          <i class="fas fa-dice-d20"></i>
-        </button>
-      </div>
+      <label>{{localize "LORE_FORGE.Kingdom.Economy.WealthLevel"}}</label>
+      <select name="wealthLevel">
+        {{#each wealthLevels}}
+        <option value="{{this.value}}" {{#if (eq ../data.wealthLevel this.value)}}selected{{/if}}>
+          {{localize this.label}}
+        </option>
+        {{/each}}
+      </select>
     </div>
 
-    {{!-- Legends --}}
+    {{!-- Industries --}}
     <div class="form-group">
-      <label>{{localize "LORE_FORGE.Kingdom.History.Legends"}}</label>
+      <label>{{localize "LORE_FORGE.Kingdom.Economy.Industries"}}</label>
       <div class="inspiration-row">
-        <textarea name="legends" rows="3"
-                  placeholder="{{localize 'LORE_FORGE.Kingdom.History.LegendsPlaceholder'}}">{{data.legends}}</textarea>
-        <button type="button" class="inspire-btn" data-action="inspire" data-field="legends">
-          <i class="fas fa-dice-d20"></i>
-        </button>
-      </div>
-    </div>
-
-    {{!-- Historical Figures --}}
-    <div class="form-group">
-      <label>{{localize "LORE_FORGE.Kingdom.History.HistoricalFigures"}}</label>
-      <div class="inspiration-row">
-        <textarea name="historicalFigures" rows="3"
-                  placeholder="{{localize 'LORE_FORGE.Kingdom.History.HistoricalFiguresPlaceholder'}}">{{data.historicalFigures}}</textarea>
-        <button type="button" class="inspire-btn" data-action="inspire" data-field="historicalFigures">
+        <textarea name="industries" rows="3"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.Economy.IndustriesPlaceholder'}}">{{data.industries}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="industries">
           <i class="fas fa-dice-d20"></i>
         </button>
       </div>

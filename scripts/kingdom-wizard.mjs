@@ -61,7 +61,7 @@ const WEALTH_LEVELS = [
   { value: "opulent",    label: "LORE_FORGE.Kingdom.WealthLevels.Opulent" }
 ];
 
-const STEPS = ["identity", "geography", "government", "history", "economy", "military", "magic", "factions", "review"];
+const STEPS = ["identity", "government", "history", "conflicts", "review"];
 
 export default class KingdomWizard extends LoreForgeWizard {
 
@@ -74,43 +74,18 @@ export default class KingdomWizard extends LoreForgeWizard {
       terrain: "plains",
       climate: "temperate",
       landmarks: "",
-      resources: "",
       govType: "monarchy",
       rulerName: "",
       rulerDesc: "",
       culture: "",
-      socialStructure: "",
-      // History
       foundingStory: "",
-      historicalEvents: "",
-      legends: "",
-      historicalFigures: "",
-      // Economy
-      currency: "",
-      industries: "",
-      tradeRoutes: "",
       wealthLevel: "modest",
-      // Military
-      militaryForces: "",
-      fortifications: "",
-      militaryTraditions: "",
-      externalThreats: "",
-      // Magic & Faith
+      industries: "",
       religion: "",
-      pantheon: "",
-      religiousOrders: "",
-      magicalInstitutions: "",
-      arcaneLaws: "",
-      // Factions
       faction1Name: "",
       faction1Goals: "",
-      faction2Name: "",
-      faction2Goals: "",
-      faction3Name: "",
-      faction3Goals: "",
-      internalConflicts: "",
-      externalConflicts: "",
-      alliances: ""
+      externalThreats: "",
+      internalConflicts: ""
     };
     this._initialData = { ...this._data };
     this._restoreDraft();
@@ -126,13 +101,9 @@ export default class KingdomWizard extends LoreForgeWizard {
   get stepLabels() {
     return [
       "LORE_FORGE.Kingdom.Steps.Identity",
-      "LORE_FORGE.Kingdom.Steps.Geography",
       "LORE_FORGE.Kingdom.Steps.Government",
       "LORE_FORGE.Kingdom.Steps.History",
-      "LORE_FORGE.Kingdom.Steps.Economy",
-      "LORE_FORGE.Kingdom.Steps.Military",
-      "LORE_FORGE.Kingdom.Steps.Magic",
-      "LORE_FORGE.Kingdom.Steps.Factions",
+      "LORE_FORGE.Kingdom.Steps.Conflicts",
       "LORE_FORGE.Kingdom.Steps.Review"
     ];
   }
@@ -140,13 +111,9 @@ export default class KingdomWizard extends LoreForgeWizard {
   get templatePaths() {
     return [
       "modules/lore-forge/templates/kingdom/step-identity.hbs",
-      "modules/lore-forge/templates/kingdom/step-geography.hbs",
       "modules/lore-forge/templates/kingdom/step-government.hbs",
       "modules/lore-forge/templates/kingdom/step-history.hbs",
-      "modules/lore-forge/templates/kingdom/step-economy.hbs",
-      "modules/lore-forge/templates/kingdom/step-military.hbs",
-      "modules/lore-forge/templates/kingdom/step-magic.hbs",
-      "modules/lore-forge/templates/kingdom/step-factions.hbs",
+      "modules/lore-forge/templates/kingdom/step-conflicts.hbs",
       "modules/lore-forge/templates/kingdom/step-review.hbs"
     ];
   }
@@ -167,12 +134,9 @@ export default class KingdomWizard extends LoreForgeWizard {
       climateLabel: this._getLabel(CLIMATES, this._data.climate),
       govTypeLabel: this._getLabel(GOV_TYPES, this._data.govType),
       wealthLevelLabel: this._getLabel(WEALTH_LEVELS, this._data.wealthLevel),
-      hasHistory: !!(this._data.foundingStory || this._data.historicalEvents || this._data.legends || this._data.historicalFigures),
-      hasEconomy: !!(this._data.currency || this._data.industries || this._data.tradeRoutes),
-      hasMilitary: !!(this._data.militaryForces || this._data.fortifications || this._data.militaryTraditions || this._data.externalThreats),
-      hasMagic: !!(this._data.religion || this._data.pantheon || this._data.religiousOrders || this._data.magicalInstitutions || this._data.arcaneLaws),
-      hasFactions: !!(this._data.faction1Name || this._data.faction2Name || this._data.faction3Name ||
-                      this._data.internalConflicts || this._data.externalConflicts || this._data.alliances)
+      hasHistory: !!(this._data.foundingStory || this._data.industries),
+      hasConflicts: !!(this._data.religion || this._data.faction1Name ||
+                       this._data.externalThreats || this._data.internalConflicts)
     };
   }
 

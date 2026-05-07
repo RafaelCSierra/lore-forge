@@ -1,0 +1,30 @@
+<section class="lore-forge-step" data-step="life">
+  <h2>{{localize "LORE_FORGE.Settlement.Steps.Life"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Settlement.Life.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Economy & Trade (consolidated) --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Life.Economy"}}</label>
+      <div class="inspiration-row">
+        <textarea name="economy" rows="4"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Life.EconomyPlaceholder'}}">{{data.economy}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="economies">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Customs & Festivals (consolidated) --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Settlement.Life.Customs"}}</label>
+      <div class="inspiration-row">
+        <textarea name="customs" rows="4"
+                  placeholder="{{localize 'LORE_FORGE.Settlement.Life.CustomsPlaceholder'}}">{{data.customs}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="customs">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

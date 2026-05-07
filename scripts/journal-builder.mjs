@@ -128,23 +128,20 @@ export function buildKingdomJournal(data, lists) {
   // ===================
   const sidebarParts = [];
 
-  // Box: Key Facts
   sidebarParts.push(infoBox(i18n("LORE_FORGE.Kingdom.Review.KeyFacts") || "Key Facts", [
     infoRow(i18n("LORE_FORGE.Kingdom.Review.Type"), typeLabel),
     infoRow(i18n("LORE_FORGE.Kingdom.Review.Terrain"), terrainLabel),
     infoRow(i18n("LORE_FORGE.Kingdom.Review.Climate"), climateLabel),
     infoRow(i18n("LORE_FORGE.Kingdom.Review.GovType"), govLabel),
     infoRow(i18n("LORE_FORGE.Kingdom.Review.Ruler"), data.rulerName),
-    infoRow(i18n("LORE_FORGE.Kingdom.Review.WealthLevel"), wealthLabel),
-    infoRow(i18n("LORE_FORGE.Kingdom.Review.Currency"), data.currency)
+    infoRow(i18n("LORE_FORGE.Kingdom.Review.WealthLevel"), wealthLabel)
   ]));
 
-  // Box: Resources
-  const resourceRows = [
-    infoRow(i18n("LORE_FORGE.Kingdom.Review.Resources"), data.resources),
-    infoRow(i18n("LORE_FORGE.Kingdom.Review.Landmarks"), data.landmarks)
-  ];
-  sidebarParts.push(infoBox(i18n("LORE_FORGE.Kingdom.Review.ResourcesBox") || "Resources", resourceRows));
+  if (data.landmarks) {
+    sidebarParts.push(infoBox(i18n("LORE_FORGE.Kingdom.Review.Landmarks") || "Landmarks", [
+      `<p style="margin: 0;">${escapeHtml(data.landmarks)}</p>`
+    ]));
+  }
 
   const sidebar = sidebarParts.filter(Boolean).join("\n");
 
@@ -153,79 +150,37 @@ export function buildKingdomJournal(data, lists) {
   // ===================
   const main = [];
 
-  // Title & Motto
   main.push(`<h1>${escapeHtml(data.name)}</h1>`);
   if (data.motto) {
     main.push(`<p style="margin: 0 0 12px 0; padding-bottom: 8px; border-bottom: 1px solid #0000003b; color: #888; font-style: italic;">"${escapeHtml(data.motto)}"</p>`);
   }
 
-  // Ruler description (if detailed)
   if (rulerText && data.rulerDesc) {
     main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.Ruler"), rulerText));
   }
 
-  // Section: History
-  const hasHistory = data.foundingStory || data.historicalEvents || data.legends || data.historicalFigures;
-  if (hasHistory) {
+  if (data.culture) {
+    main.push(sectionHeader(`<i class="fas fa-users"></i> ${i18n("LORE_FORGE.Kingdom.Review.Culture")}`));
+    main.push(`<p>${escapeHtml(data.culture)}</p>`);
+  }
+
+  const hasHistoryEconomy = data.foundingStory || data.industries;
+  if (hasHistoryEconomy) {
     main.push(sectionHeader(`<i class="fas fa-book-open"></i> ${i18n("LORE_FORGE.Kingdom.Review.History")}`));
     main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.FoundingStory"), data.foundingStory));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.HistoricalEvents"), data.historicalEvents));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.Legends"), data.legends));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.HistoricalFigures"), data.historicalFigures));
-  }
-
-  // Section: Economy
-  const hasEconomy = data.industries || data.tradeRoutes;
-  if (hasEconomy) {
-    main.push(sectionHeader(`<i class="fas fa-coins"></i> ${i18n("LORE_FORGE.Kingdom.Review.Economy")}`));
     main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.Industries"), data.industries));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.TradeRoutes"), data.tradeRoutes));
   }
 
-  // Section: Military
-  const hasMilitary = data.militaryForces || data.fortifications || data.militaryTraditions || data.externalThreats;
-  if (hasMilitary) {
-    main.push(sectionHeader(`<i class="fas fa-shield-halved"></i> ${i18n("LORE_FORGE.Kingdom.Review.Military")}`));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.MilitaryForces"), data.militaryForces));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.Fortifications"), data.fortifications));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.MilitaryTraditions"), data.militaryTraditions));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.ExternalThreats"), data.externalThreats));
+  if (data.religion) {
+    main.push(sectionHeader(`<i class="fas fa-hat-wizard"></i> ${i18n("LORE_FORGE.Kingdom.Review.Religion")}`));
+    main.push(`<p>${escapeHtml(data.religion)}</p>`);
   }
 
-  // Section: Magic & Faith
-  const hasMagic = data.religion || data.pantheon || data.religiousOrders || data.magicalInstitutions || data.arcaneLaws;
-  if (hasMagic) {
-    main.push(sectionHeader(`<i class="fas fa-hat-wizard"></i> ${i18n("LORE_FORGE.Kingdom.Review.Magic")}`));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.Religion"), data.religion));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.Pantheon"), data.pantheon));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.ReligiousOrders"), data.religiousOrders));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.MagicalInstitutions"), data.magicalInstitutions));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.ArcaneLaws"), data.arcaneLaws));
-  }
-
-  // Section: Factions
-  const factions = [
-    { name: data.faction1Name, goals: data.faction1Goals },
-    { name: data.faction2Name, goals: data.faction2Goals },
-    { name: data.faction3Name, goals: data.faction3Goals }
-  ].filter(f => f.name);
-
-  const hasFactions = factions.length > 0 || data.culture || data.socialStructure;
-  if (hasFactions) {
-    main.push(sectionHeader(`<i class="fas fa-users"></i> ${i18n("LORE_FORGE.Kingdom.Review.Factions")}`));
-
-    if (factions.length > 0) {
-      main.push("<ul>");
-      for (const f of factions) {
-        let entry = `<strong>${escapeHtml(f.name)}</strong>`;
-        if (f.goals) entry += `: ${escapeHtml(f.goals)}`;
-        main.push(`<li>${entry}</li>`);
-      }
-      main.push("</ul>");
-    }
-
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.Culture"), data.culture));
-    main.push(fieldP(i18n("LORE_FORGE.Kingdom.Review.SocialStructure"), data.socialStructure));
+  if (data.faction1Name) {
+    main.push(sectionHeader(`<i class="fas fa-users"></i> ${i18n("LORE_FORGE.Kingdom.Review.MainFaction") || "Main Faction"}`));
+    let entry = `<strong>${escapeHtml(data.faction1Name)}</strong>`;
+    if (data.faction1Goals) entry += `: ${escapeHtml(data.faction1Goals)}`;
+    main.push(`<p>${entry}</p>`);
   }
 
   const mainContent = main.filter(Boolean).join("\n");
@@ -234,17 +189,16 @@ export function buildKingdomJournal(data, lists) {
   // FULL-WIDTH (secrets below layout)
   // ===================
   const fullWidth = [];
-  const hasSecrets = data.internalConflicts || data.externalConflicts || data.alliances;
+  const hasSecrets = data.internalConflicts || data.externalThreats;
   if (hasSecrets) {
     const secretRows = [];
+    if (data.externalThreats) secretRows.push(`<p><strong>${escapeHtml(i18n("LORE_FORGE.Kingdom.Review.ExternalThreats"))}:</strong> ${escapeHtml(data.externalThreats)}</p>`);
     if (data.internalConflicts) secretRows.push(`<p><strong>${escapeHtml(i18n("LORE_FORGE.Kingdom.Review.InternalConflicts"))}:</strong> ${escapeHtml(data.internalConflicts)}</p>`);
-    if (data.externalConflicts) secretRows.push(`<p><strong>${escapeHtml(i18n("LORE_FORGE.Kingdom.Review.ExternalConflicts"))}:</strong> ${escapeHtml(data.externalConflicts)}</p>`);
-    if (data.alliances) secretRows.push(`<p><strong>${escapeHtml(i18n("LORE_FORGE.Kingdom.Review.Alliances"))}:</strong> ${escapeHtml(data.alliances)}</p>`);
 
     fullWidth.push(
       `<div style="background: rgba(183,28,28,0.05); padding: 1rem; border-radius: 5px; border: 1px solid rgba(183,28,28,0.2); margin-top: 1rem;">`
       + `<h3 style="margin-top: 0; color: #B71C1C; border-bottom: 1px solid rgba(183,28,28,0.2); padding-bottom: 0.5rem;">`
-      + `<i class="fas fa-exclamation-triangle"></i> ${i18n("LORE_FORGE.Kingdom.Review.ConflictsAlliances") || "Conflicts & Alliances"}</h3>`
+      + `<i class="fas fa-exclamation-triangle"></i> ${i18n("LORE_FORGE.Kingdom.Review.Conflicts") || "Conflicts"}</h3>`
       + secretRows.join("\n")
       + `</div>`
     );
@@ -254,12 +208,10 @@ export function buildKingdomJournal(data, lists) {
 
   // --- Campaign Codex GM notes ---
   const notesSections = [];
+  if (data.externalThreats) notesSections.push(fieldP(
+    i18n("LORE_FORGE.Kingdom.Review.ExternalThreats"), data.externalThreats));
   if (data.internalConflicts) notesSections.push(fieldP(
     i18n("LORE_FORGE.Kingdom.Review.InternalConflicts"), data.internalConflicts));
-  if (data.externalConflicts) notesSections.push(fieldP(
-    i18n("LORE_FORGE.Kingdom.Review.ExternalConflicts"), data.externalConflicts));
-  if (data.alliances) notesSections.push(fieldP(
-    i18n("LORE_FORGE.Kingdom.Review.Alliances"), data.alliances));
   const notesContent = notesSections.filter(Boolean).join("\n");
 
   const flags = {
@@ -513,8 +465,7 @@ export function buildSettlementJournal(data, lists) {
   // --- NPCs ---
   const npcList = [
     { name: data.npc1Name, role: data.npc1Role, desc: data.npc1Desc },
-    { name: data.npc2Name, role: data.npc2Role, desc: data.npc2Desc },
-    { name: data.npc3Name, role: data.npc3Role, desc: data.npc3Desc }
+    { name: data.npc2Name, role: data.npc2Role, desc: data.npc2Desc }
   ].filter(n => n.name);
 
   // --- Districts ---
@@ -531,7 +482,6 @@ export function buildSettlementJournal(data, lists) {
   // ===================
   const sidebarParts = [];
 
-  // Box: Key Facts
   sidebarParts.push(infoBox(i18n("LORE_FORGE.Settlement.Review.KeyFacts") || "Key Facts", [
     infoRow(i18n("LORE_FORGE.Settlement.Review.Size"), sizeLabel),
     infoRow(i18n("LORE_FORGE.Settlement.Review.Population"), data.population),
@@ -539,7 +489,6 @@ export function buildSettlementJournal(data, lists) {
     infoRow(i18n("LORE_FORGE.Settlement.Review.Defenses"), data.defenses)
   ]));
 
-  // Box: Notable NPCs
   if (npcList.length > 0) {
     const npcRows = npcList.map(npc => {
       const roleText = npc.role ? ` (${escapeHtml(npc.role)})` : "";
@@ -564,15 +513,17 @@ export function buildSettlementJournal(data, lists) {
   // ===================
   const main = [];
 
-  // Title
   main.push(`<h1>${escapeHtml(data.name)}</h1>`);
 
-  // Leader detail (if has description)
   if (leaderText && data.leaderDesc) {
     main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.Leader"), leaderText));
   }
 
-  // Section: Geography
+  if (data.founding) {
+    main.push(sectionHeader(`<i class="fas fa-book-open"></i> ${i18n("LORE_FORGE.Settlement.Review.Founding")}`));
+    main.push(`<p>${escapeHtml(data.founding)}</p>`);
+  }
+
   const hasGeography = districts.length > 0 || data.landmarks;
   if (hasGeography) {
     main.push(sectionHeader(`<i class="fas fa-map"></i> ${i18n("LORE_FORGE.Settlement.Review.Geography")}`));
@@ -588,33 +539,16 @@ export function buildSettlementJournal(data, lists) {
     main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.Landmarks"), data.landmarks));
   }
 
-  // Section: History
-  const hasHistory = data.founding || data.customs || data.localLaws || data.festivals;
-  if (hasHistory) {
-    main.push(sectionHeader(`<i class="fas fa-book-open"></i> ${i18n("LORE_FORGE.Settlement.Review.History")}`));
-    main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.Founding"), data.founding));
+  const hasLife = data.economy || data.customs;
+  if (hasLife) {
+    main.push(sectionHeader(`<i class="fas fa-store"></i> ${i18n("LORE_FORGE.Settlement.Review.Life")}`));
+    main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.Economy"), data.economy));
     main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.Customs"), data.customs));
-    main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.LocalLaws"), data.localLaws));
-    main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.Festivals"), data.festivals));
   }
 
-  // Section: Trade & Commerce
-  const hasTrade = data.market || data.settlTradeRoutes || data.notableBuildings || data.infrastructure;
-  if (hasTrade) {
-    main.push(sectionHeader(`<i class="fas fa-store"></i> ${i18n("LORE_FORGE.Settlement.Review.Trade")}`));
-    main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.Market"), data.market));
-    main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.TradeRoutes"), data.settlTradeRoutes));
-    main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.NotableBuildings"), data.notableBuildings));
-    main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.Infrastructure"), data.infrastructure));
-  }
-
-  // Section: Religion & Guilds
-  const hasReligion = data.temples || data.guilds || data.organizations;
-  if (hasReligion) {
-    main.push(sectionHeader(`<i class="fas fa-place-of-worship"></i> ${i18n("LORE_FORGE.Settlement.Review.ReligionGuilds")}`));
-    main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.Temples"), data.temples));
-    main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.Guilds"), data.guilds));
-    main.push(fieldP(i18n("LORE_FORGE.Settlement.Review.Organizations"), data.organizations));
+  if (data.organizations) {
+    main.push(sectionHeader(`<i class="fas fa-users"></i> ${i18n("LORE_FORGE.Settlement.Review.Organizations")}`));
+    main.push(`<p>${escapeHtml(data.organizations)}</p>`);
   }
 
   const mainContent = main.filter(Boolean).join("\n");
@@ -624,15 +558,6 @@ export function buildSettlementJournal(data, lists) {
   // ===================
   const fullWidth = [];
 
-  // Section: Society
-  const hasSociety = data.economy || data.culture;
-  if (hasSociety) {
-    fullWidth.push(sectionHeader(`<i class="fas fa-users"></i> ${i18n("LORE_FORGE.Settlement.Review.Society")}`));
-    fullWidth.push(fieldP(i18n("LORE_FORGE.Settlement.Review.Economy"), data.economy));
-    fullWidth.push(fieldP(i18n("LORE_FORGE.Settlement.Review.Culture"), data.culture));
-  }
-
-  // Section: Rumors & Hooks
   const hasHooks = data.rumors || data.plotHooks;
   if (hasHooks) {
     fullWidth.push(sectionHeader(`<i class="fas fa-comment-dots"></i> ${i18n("LORE_FORGE.Settlement.Review.RumorsHooks") || "Rumors & Hooks"}`));
@@ -640,20 +565,13 @@ export function buildSettlementJournal(data, lists) {
     fullWidth.push(fieldP(i18n("LORE_FORGE.Settlement.Review.PlotHooks"), data.plotHooks));
   }
 
-  // Secret block: Criminal Groups
-  if (data.criminalGroups) {
-    fullWidth.push(secretBlock(i18n("LORE_FORGE.Settlement.Review.CriminalGroups"), data.criminalGroups));
-  }
-
   const htmlContent = wikiLayout(mainContent, sidebar)
-    + `<div style="margin-top: 1rem;">${fullWidth.filter(Boolean).join("\n")}</div>`;
+    + (fullWidth.length > 0 ? `<div style="margin-top: 1rem;">${fullWidth.filter(Boolean).join("\n")}</div>` : "");
 
   // --- Campaign Codex notes ---
   const notesSections = [];
   if (data.rumors) notesSections.push(fieldP(
     i18n("LORE_FORGE.Settlement.Review.Rumors"), data.rumors));
-  if (data.criminalGroups) notesSections.push(fieldP(
-    i18n("LORE_FORGE.Settlement.Review.CriminalGroups"), data.criminalGroups));
   if (npcList.length > 0) {
     const npcSummary = npcList.map(n => {
       let text = n.name;

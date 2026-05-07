@@ -1,0 +1,67 @@
+<section class="lore-forge-step" data-step="conflicts">
+  <h2>{{localize "LORE_FORGE.Kingdom.Steps.Conflicts"}}</h2>
+  <p class="step-description">{{localize "LORE_FORGE.Kingdom.Conflicts.Desc"}}</p>
+
+  <div class="lf-form">
+    {{!-- Religion --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Magic.Religion"}}</label>
+      <div class="inspiration-row">
+        <textarea name="religion" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.Magic.ReligionPlaceholder'}}">{{data.religion}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="religions">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Faction (single, optional) --}}
+    <div class="lf-entry-block">
+      <h4>{{localize "LORE_FORGE.Kingdom.Conflicts.MainFaction"}}</h4>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Kingdom.Factions.FactionName"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="faction1Name" value="{{data.faction1Name}}"
+                 placeholder="{{localize 'LORE_FORGE.Kingdom.Factions.FactionNamePlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="factionNames">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "LORE_FORGE.Kingdom.Factions.FactionGoals"}}</label>
+        <div class="inspiration-row">
+          <input type="text" name="faction1Goals" value="{{data.faction1Goals}}"
+                 placeholder="{{localize 'LORE_FORGE.Kingdom.Factions.FactionGoalsPlaceholder'}}">
+          <button type="button" class="inspire-btn" data-action="inspire" data-field="factionGoals">
+            <i class="fas fa-dice-d20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {{!-- External Threats --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Military.Threats"}}</label>
+      <div class="inspiration-row">
+        <textarea name="externalThreats" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.Military.ThreatsPlaceholder'}}">{{data.externalThreats}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="externalThreats">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+
+    {{!-- Internal Conflicts --}}
+    <div class="form-group">
+      <label>{{localize "LORE_FORGE.Kingdom.Factions.InternalConflicts"}}</label>
+      <div class="inspiration-row">
+        <textarea name="internalConflicts" rows="2"
+                  placeholder="{{localize 'LORE_FORGE.Kingdom.Factions.InternalConflictsPlaceholder'}}">{{data.internalConflicts}}</textarea>
+        <button type="button" class="inspire-btn" data-action="inspire" data-field="conflicts">
+          <i class="fas fa-dice-d20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
